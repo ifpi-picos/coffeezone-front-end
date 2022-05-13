@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+min-height: 100vh;
+width: 100%;
+padding: 2rem;
+background-image: linear-gradient(#40324c, #2f2841);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+color: #00ff88;
+}
+.home-box{
+    width: 17rem;
+}
+
+.home-box form{ 
+    display: flex;
+    flex-direction: column;
+}
+
+.laft-login-img{
+	width: 30vw;
+}
+.home-box form button.Entrar{
+    background-color: #00ff88;
+    padding: .75rem;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    width: 70%;
+    margin: auto;
+    text-transform: uppercase;
+}
+.home-box form button.Cadastrar{
+    background-color: #2f2841;
+    padding: .75rem;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    border-radius: 8px;
+    width: 70%;
+    margin: auto;
+    text-transform: uppercase;
+}
+  .container a.signinRedirectToLogin{
+    color: white;
+    font-weight: 900;
+}
