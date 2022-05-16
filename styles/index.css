@@ -1,53 +1,114 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Mada&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap');
+body{
     margin: 0;
-    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+body *{
     box-sizing: border-box;
 }
-.container{
-min-height: 100vh;
-width: 100%;
-padding: 2rem;
-background-image: linear-gradient(#40324c, #2f2841);
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 1rem;
-color: #00ff88;
-}
-.home-box{
-    width: 17rem;
-}
-
-.home-box form{ 
+.main-home{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(30, 14, 44, 0.849);
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-home{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
-
-.laft-login-img{
-	width: 30vw;
+.left-home > h1{
+    font-size: 3vw;
+    color: #00ff88; 
 }
-.home-box form button.Entrar{
-    background-color: #00ff88;
-    padding: .75rem;
-    color: black;
-    border: none;
-    border-radius: 8px;
-    width: 70%;
-    margin: auto;
-    text-transform: uppercase;
-}
-.home-box form button.Cadastrar{
-    background-color: #2f2841;
-    padding: .75rem;
+.left-home > h3{
     color: #00ff88;
-    border: 1px solid #00ff88;
-    border-radius: 8px;
-    width: 70%;
-    margin: auto;
-    text-transform: uppercase;
+} 
+.img-logo{
+    width: 30vw;
 }
-  .container a.signinRedirectToLogin{
-    color: white;
-    font-weight: 900;
+.right-home{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.card-home{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 35px;
+    background-color: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+.btn-enter{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius:8px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    background-color: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 0px 7px -12px #71c89e;
+}
+.btn-register{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius:8px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    background-color: #2f2841;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px -12px #71c89e;
+    color: #00ff88;
+    border: 1px solid #000;
+}
+@media only screen and (max-width:950px) {
+    .card-home{
+        width: 85%;
+    }
+}
+@media only screen and (max-width: 600px){
+    .main-home{
+        flex-direction: column;
+    }
+    .left-home > h1 {
+        display: none;
+    }
+    .left-home > h3{
+        display: none;
+    }
+    .left-home{
+        width: 100%;
+        height: outo;
+
+    }
+    .right-home{
+        width: 100%;
+        height: outo;
+    }
+    .img-logo{
+        width: 39vh;
+
+    }
+    .card-home{
+        width: 90%;
+    }
+
 }
