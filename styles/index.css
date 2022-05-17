@@ -41,6 +41,7 @@ body *{
 
 }
 .card-home{
+    gap: 1em;
     width: 60%;
     display: flex;
     justify-content: center;
@@ -50,6 +51,7 @@ body *{
     background-color: #2f2841;
     border-radius: 20px;
     box-shadow: 0px 10px 40px #00000056;
+    box-sizing: border-box;
 }
 .btn-enter{
     width: 100%;
@@ -83,6 +85,8 @@ body *{
     background-color: #2f2841;
     color: #00ff88;
     border: 1px solid #000;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 @media only screen and (max-width:950px) {
     .card-home{
