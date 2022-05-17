@@ -4,14 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
-}
-
-:root{
-  --cor1: #00FF89;
-  --cor2: #29E692;
-  --cor3: #1e0e2cd8;
-  --cor4: #2f2841;
 }
 
 .container{
@@ -19,7 +11,7 @@
   min-height: 100vh;
   width: 100%;
   padding: 2rem;
-  background-color: var(--cor3);
+  background-color: var(--backgroundMain);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +33,7 @@ img{
 }
 
 .login-box{
-  background-color: var(--cor4);  
+  background-color: var(--ColorBoxshadow);  
   width: 17rem;
   padding: 2rem;
   display: flex;
@@ -58,11 +50,6 @@ img{
   align-items: center;
 }
 
-h1{
-  color: var(--cor2);
-  display: none;
-}
-
 .login-box form{
   width: 100%;
   display: flex;
@@ -70,25 +57,10 @@ h1{
   gap: 1.25rem;
 }
 
-.siginInputText{
-  border: none;
-	border-radius: 10px;
-	padding: 15px;
-	background-color: #514869;
-  color:#ffffff;
-	font-size: 12pt;
-	box-shadow:0px 10px 40px #514869;
-	outline: none;
-}
-
-.siginInputText::placeholder{
-  color: rgb(142, 152, 161);
-}
-
 .login-box form div.inputRadio{
   display: flex;
   align-items: center;
-  gap: .25rem;
+  gap: .5rem;
 }
 
 div.inputRadio + div.inputRadio{
@@ -100,32 +72,12 @@ div.inputRadio + div.inputRadio{
   width: .8rem;
   height: .8rem;
   background-color: rgba(0, 0, 0, 0);
-  border: 2px solid var(--cor2);
+  border: 2px solid var(--ColorText);
   border-radius: 500%;
 }
 
 .login-box form div.inputRadio .signinInputRadio:checked{
-  background-color: var(--cor2);
-}
-
-.login-box form button{
-  background-color: var(--cor1);
-  width: 100%;
-	padding: 16px 0px;  
-	border: none;
-	border-radius:8px;
-	text-transform: uppercase;
-	font-weight: 800;
-	letter-spacing: 3px;
-	cursor: pointer;
-	box-shadow: 0px 10px 40px -12px #71c89e;
-  /* padding: .75rem;
-  color: black;
-  font-weight: bold;
-  border: none;
-  width: 100%;
-  margin: auto;
-  text-transform: uppercase; */
+  background-color: var(--ColorText);
 }
 
 .container a.signinRedirectToLogin{

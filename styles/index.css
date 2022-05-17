@@ -24,7 +24,7 @@ body *{
 }
 .left-home > h1{
     font-size: 3vw;
-    color: #00ff88; 
+    /* color: #00ff88;  */
 }
 .left-home > h3{
     color: #00ff88;
@@ -53,7 +53,7 @@ body *{
 }
 .btn-enter{
     width: 100%;
-    padding: 16px 0px;
+    /* padding: 16px 0px;
     margin: 25px;
     border: none;
     border-radius:8px;
@@ -62,10 +62,10 @@ body *{
     letter-spacing: 3px;
     background-color: #00ff88;
     cursor: pointer;
-    box-shadow: 0px 0px 7px -12px #71c89e;
+    box-shadow: 0px 0px 7px -12px #71c89e; */
 }
 .btn-register{
-    width: 100%;
+    /* width: 100%;
     padding: 16px 0px;
     margin: 25px;
     border: none;
@@ -76,6 +76,11 @@ body *{
     background-color: #2f2841;
     cursor: pointer;
     box-shadow: 0px 0px 15px -12px #71c89e;
+    color: #00ff88;
+    border: 1px solid #000; */
+
+    width: 100%;
+    background-color: #2f2841;
     color: #00ff88;
     border: 1px solid #000;
 }
