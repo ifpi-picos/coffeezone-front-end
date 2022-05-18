@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Mada&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap');
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+body *{
+    box-sizing: border-box;
+}
+.main-profile{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.left-profile, .right-profile{
+    display: flex;
+    justify-content:baseline;
+    align-items: baseline;
+    flex-direction: row;
+}
+.main-profile .left-profile{
+    width: 20%;
+    height: 100%;
+    background-color: var( --ColorBoxshadow);
+}
+.main-profile .right-profile{
+    width: 80%;
+    height: 100%;
+    background-color: var(--BackgroundColorInput);
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+.main-profile .left-profile .img-profile{
+    border-radius: 50%;
+    background-color: var(--ColorText);
+    width: 50px;
+    height: 50px;
+    margin-left: 1rem;
+}
+.main-profile .start-profile > h1, h3{
+    color: #00ff88;
+}
+.main-profile .details-profile > h2, p{
+    color: #00ff88;
+}
+.main-profile .details-profile .bold, i{
+    color: #00ff8886;
+    font-weight: bold;
+}
