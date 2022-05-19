@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas</title>
+    <title>Agendamento</title>
     <link rel="stylesheet" href="./styles/dashboard.css">
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/bookingandscheduling.css">
 </head>
-<body>
+<body onload="showDay(), showDayNumber()">
     <header id="header">
         <h1 id="logoName">COFFEE ZONE</h1>
         <nav id="nav">
@@ -24,16 +24,13 @@
         </nav>
     </header>
     <section id="whiteBar">
-        <div id="items">
-            <input type="checkbox" id="check1">
-            <h2>Escolha uma opção:</h2>
-            <label for="check1">Seleione uma opção</label> 
-            <ul>
-                <li><a href="#scheduling.html">Reservar vaga</a></li>
-                <li><a href="#">Reservar computador</a></li>
-            </ul>
-            <a href="" id="reserve">Continuar</a>
+        <h2>Reserve um dia</h2>
+        <div id="itemsCalendar">
+            <h2 id="txtDayWeek"></h2>
+            <p id="txtDayNumber"></p>
         </div>
+
     </section>
+    <script src="./scripts/dashboard.js"></script>
 </body>
 </html>

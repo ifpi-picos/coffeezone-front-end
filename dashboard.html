@@ -6,75 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./styles/dashboard.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <!-- Create dashboard / mobile and desktop -->
-<body onload="realTime(), realDate()">
-
-    <div id="whiteBar">
+<body onload="realTime(), realDate(), drawChart()">
+    <header id="header">
+        <h1 id="logoName">COFFEE ZONE</h1>
+        <nav id="nav">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+                <span id="hamburger"></span>
+              </button>
+            <ul id="menu" role="menu">
+                <li><a href="dashboard.html">Atividade</a></li>
+                <li><a href="bookingandscheduling.html">Reservas</a></li>
+                <li><a href="">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="whiteBar">
+        <h1>Ocupação da Sala</h1>
         <div id="txtHours"></div>
         <div id="txtDate"></div>
+        <div id="piechart"></div>
+        <a href="bookingandscheduling.html" id="reserve">RESERVAR VAGA</a>
 
-        <div id="piechart" style="width: 700px; height: 500px; z-index: 999;"></div>
-        <a href="" id="reserve">RESERVAR VAGA</a>
-    
-        <div id="purpleBar">
-            <h1 id="logoName">COFFEE ZONE</h1>
-            <div id="options">
-                <a href="dashboard.html">Atividade</a>
-                <a href="">Reservas</a>
-                <a href="">Sair</a>                
-            </div>
-        </div>
-    </div>
-    
+    </section>
+    <script src="./scripts/dashboard.js"></script>
 </body>
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['Vagas ocupadas', 20],
-            ['Vagas Disnponíveis', 80]
-        ]);
-
-        var options = {
-            title: 'Ocupação da sala',
-            colors: ['#514869', '#00FF88']
-
-        };
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-        chart.draw(data, options);
-    }
-        chart.draw(data, options);
-
-        function realTime(){
-            today=new Date();
-            h=today.getHours();
-            m=today.getMinutes();
-            document.getElementById('txtHours').innerHTML=h+":"+m;
-            setTimeout('realTime()',500);
-        }
-        function realDate(){
-            const months = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
-            now = new Date();
-            d=now.getDate();
-            m=months[now.getMonth()];
-            a=now.getFullYear();
-            
-            document.getElementById('txtDate').innerHTML=d+ " de "  +m+ " de " +a;
-            setTimeout('realDate()',500);
-
-        }
-
-
-        
-</script>
-  
-
- 
+    
 </html>
