@@ -2,6 +2,7 @@
 body{
     margin: 0;
     font-family: 'Noto Sans', sans-serif;
+
 }
 body *{
     box-sizing: border-box;
@@ -10,29 +11,38 @@ body *{
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
-    align-items: baseline;
-}
-.left-profile, .right-profile{
-    display: flex;
-    justify-content:baseline;
-    align-items: baseline;
+    align-items: center;
     flex-direction: row;
 }
-.main-profile .left-profile{
+.left-profile{
+    padding-top: 1rem;
+    padding-left: 1rem;
     width: 20%;
     height: 100%;
     background-color: var( --ColorBoxshadow);
     display: flex;
-}
-.main-profile .right-profile{
+    align-items: baseline;
+    justify-content: baseline;
+    flex-direction: row;
+}   
+.right-profile{
     width: 80%;
     height: 100%;
     background-color: var(--BackgroundColorInput);
     display: flex;
+    align-items: baseline;
+    justify-content: baseline;
     flex-direction: column;
     padding-left: 1rem;
 }
+.right-profile2{
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+} 
 .main-profile .left-profile .img-profile{
     border-radius: 50%;
     background-color: var(--ColorText);
@@ -46,13 +56,54 @@ body *{
     color: #00ff88;
 }
 .main-profile .details-profile .bold, i{
-    color: #00ff8886;
+    color: #00ff88;
     font-weight: bold;
 }
-a{
+.options{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--ColorText);
+    margin-left: 1rem;
+}
+a{
+    text-decoration: none;
+    color: var(--ColorText);
+    padding: 2px;
+    font-size: 20px;
+    transition: 400ms;    
+}
+a:hover{
+    color: #ffff;
+}
+@media only screen and (max-width: 880px){
+    .left-profile{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .options{
+        margin: 0rem;
+        padding-top: 1rem;
+    }
+}
+@media only screen and (max-width: 600px){
+    .main-profile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .left-profile{
+        width: 100%;
+    }
+    .right-profile{
+        display: none;
+    }
+    .right-profile2{
+        display: block;
+    }
+    .options{
+        display: none;
+    }
 }
