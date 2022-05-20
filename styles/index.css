@@ -26,8 +26,9 @@ body *{
     font-size: 3vw;
     /* color: #00ff88;  */
 }
-.left-home > h3{
+.left-home > h2{
     color: #00ff88;
+    padding-left: 1rem;
 } 
 .img-logo{
     width: 30vw;
@@ -55,6 +56,7 @@ body *{
 }
 .btn-enter{
     width: 100%;
+    box-shadow: 0px 0px 15px -5px #000000;
     /* padding: 16px 0px;
     margin: 25px;
     border: none;
@@ -84,9 +86,17 @@ body *{
     width: 100%;
     background-color: #2f2841;
     color: #00ff88;
-    border: 1px solid #000;
+    border: 1px solid #2f2841;
     padding-left: 2rem;
     padding-right: 2rem;
+    box-shadow: 0px 0px 15px -5px #000000;
+}
+button{
+    transition: 400ms;
+}
+button:hover{
+    color: #00ff88;
+    background-color: rgba(0, 0, 0, 0.363);
 }
 @media only screen and (max-width:950px) {
     .card-home{
@@ -100,7 +110,7 @@ body *{
     .left-home > h1 {
         display: none;
     }
-    .left-home > h3{
+    .left-home > h2{
         display: none;
     }
     .left-home{
