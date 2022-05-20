@@ -15,14 +15,6 @@ function ValidatePhone(tel) {
   return false;
 }
 
-/* function validation (targetValue, input, infoValided, infoValidation) {
-  info = infoValided;
-  info = infoValidation(targetValue);
-  infoValidation(targetValue) ? input.style.border = '2px solid var(--ColorText)' : input.style.border = '2px solid red';
-  if(!targetValue) input.style.border = 'none'; 
-  console.log(info);
-} */
-
 let nameValided = false;
 let emailValided = false;
 let phoneValided = false;
@@ -30,7 +22,7 @@ let phoneValided = false;
 const inputName = document.querySelector('input[type="text"][placeholder="Nome"]');
 inputName.addEventListener('keyup', ({target}) => {
   let name = target.value;  
-  nameValided = ValidateName(name)
+  nameValided = ValidateName(name);
   ValidateName(name) ? inputName.style.border = '2px solid var(--ColorText)' : inputName.style.border = '2px solid red';
   if(!name) inputName.style.border = 'none'; 
 })
@@ -66,16 +58,17 @@ function submit () {
       email: inputEmail,
       password: inputPassword,
       phone: inputPhone,
-      funcText: inputFunction,
-      funcRadio: radioFunction
+      occupation: inputFunction,
+      type: radioFunction
     }
+      
     console.log(obj)
   } else {
-    console.log('preencha todos os campos corretamente')
+    console.log('preencha todos os campos corretamente');
   }
 }
 
 const button = document.querySelector('button');
 button.addEventListener('click', (e) => {
   submit();
-}) 
+})
