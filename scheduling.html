@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="./styles/dashboard.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/bookingandscheduling.css">
+</head>
+<body onload="showDay(), showDayNumber(),realDate(day)">
+    <header id="header">
+        <h1 id="logoName">COFFEE ZONE</h1>
+        <nav id="nav">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu">
+                <li><a href="dashboard.html">Atividade</a></li>
+                <li><a href="bookingandscheduling.html">Reservas</a></li>
+                <li><a href="">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="whiteBar">
+        <h2>Reserve um dia</h2>
+        <div id="itemsCalendar">
+            <div id="txtDayWeek"></div>
+            <div id="txtDayNumber"></div>
+        </div>
+
+        <form action="#">
+            <label for="">08:00 - 09:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">09:00 - 10:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">10:00 - 11:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">11:00 - 12:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">12:00 - 13:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">13:00 - 14:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">14:00 - 15:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">15:00 - 16:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">16:00 - 17:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">17:00 - 18:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">18:00 - 19:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">19:00 - 20:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">20:00 - 21:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+            <label for="">21:00 - 22:00</label>
+            <input type="checkbox" id="" name="" value=""></br>
+
+            <input type="submit" value="Continuar">
+          </form>
+
+    </section>
+    <script src="./scripts/dashboard.js"></script>
+</body>
+</html>
