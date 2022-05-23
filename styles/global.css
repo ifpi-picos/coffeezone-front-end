@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Mada&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mada&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap");
 body {
   margin: 0;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 
   padding: 0;
 }
@@ -11,48 +11,58 @@ body {
   --Colorbutton: #00ff88;
   --colorbackgroundcolor: rgba(30, 14, 44, 0.849);
   --ColorBoxshadow: #2f2841;
-  --BackgroundColorInput:#514869;
-  --buttoncontent:#000;
+  --BackgroundColorInput: #514869;
+  --buttoncontent: #000;
   --backgroundMain: #1e0e2cd8;
+  --boxShadow: 0px 0px 7px #2f2841;
 }
 
-h1, h3 {
+h1,
+h2,
+h3 {
   color: var(--ColorText);
+  font-weight: 700;
 }
 
-button{
-    color: var(--buttoncontent);
-    border-radius: 10px;
-    box-shadow: 0 0 7px var(--ColorBoxshadow);
-    background-color: var(--Colorbutton);
-
-    padding: 1rem;
-    border: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 3px;
-    cursor: pointer;
+button {
+  color: var(--buttoncontent);
+  border-radius: 10px;
+  box-shadow: var(--boxShadow);
+  background-color: var(--Colorbutton);
+  padding: 1rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  cursor: pointer;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-input[type="password"]{
-	border: none;
-	border-radius: 10px;
-	padding: 15px;
-	background-color: var(--BackgroundColorInput);
-    background-color: #514869;
-	color:#ffffff;
-	font-size: 12pt;
-	box-shadow:0px 0px 7px #5148695b;
-	outline: none;
-	box-sizing: border-box;
+input[type="password"] {
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: var(--BackgroundColorInput);
+  background-color: #514869;
+  color: #ffffff;
+  font-size: 12pt;
+  box-shadow: var(--boxShadow);
+  outline: none;
+  box-sizing: border-box;
 }
 
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="tel"]::placeholder,
-input[type="password"]::placeholder{
-	color: rgb(142, 152, 161);
+input[type="password"]::placeholder {
+  color: rgb(142, 152, 161);
+}
+button {
+  transition: 400ms;
+}
+button:hover {
+  color: #00ff88;
+  background-color: rgba(0, 0, 0, 0.363);
 }

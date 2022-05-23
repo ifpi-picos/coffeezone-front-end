@@ -23,6 +23,7 @@ body *{
     flex-direction: column;
 }
 .left-home > h1{
+    margin: 0;
     font-size: 3vw;
     /* color: #00ff88;  */
 }
@@ -89,7 +90,8 @@ body *{
     border: 1px solid #2f2841;
     padding-left: 2rem;
     padding-right: 2rem;
-    box-shadow: 0px 0px 15px -5px #000000;
+    box-shadow: 0px 0px 7px #17171adc;
+    
 }
 button{
     transition: 400ms;

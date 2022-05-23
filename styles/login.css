@@ -24,7 +24,7 @@ body *{
 }
 .left-login > h1{
 	font-size: 3vw;
-/* 	color: #00ff88; */
+
 }
 .left-login-img{
 	width: 30vw;
@@ -58,36 +58,19 @@ body *{
 }
 .textfield > input{
 	width: 100%;
-	/* border: none;
-	border-radius: 10px;
-	padding: 15px;
-	background-color: #514869;
-	color:#ffffff;
-	font-size: 12pt;
-	box-shadow:0px 0px 7px #514869;
-	outline: none;
-	box-sizing: border-box; */
+	
 }
 .textfield > label{
 	color:rgb(255, 255, 255);
 	margin-bottom: 10px;
 }
 .textfield > input::placeholder{
-	/* color: rgb(142, 152, 161); */
+
 }
 .btn-login{
 	width: 100%;
 	margin-top: 25px;
-	/* padding: 16px 0px;
-	margin: 25px;
-	border: none;
-	border-radius:8px;
-	text-transform: uppercase;
-	font-weight: 800;
-	letter-spacing: 3px;
-	background-color: #00ff88;
-	cursor: pointer;
-	box-shadow: 0px 0px 7px -12px #71c89e; */
+
 
 }
 @media only screen and (max-width:950px){
