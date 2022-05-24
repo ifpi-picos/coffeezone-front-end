@@ -30,6 +30,7 @@ body *{
 .left-home > h2{
     color: #00ff88;
     padding-left: 1rem;
+    text-align: center;
 } 
 .img-logo{
     width: 30vw;
