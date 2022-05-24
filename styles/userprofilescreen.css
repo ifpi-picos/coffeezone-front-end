@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Mada&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap');
 body{
     margin: 0;
-    font-family: 'Noto Sans', sans-serif;
-
 }
 body *{
     box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
 }
 .main-profile{
     height: 100vh;
@@ -15,16 +14,55 @@ body *{
     flex-direction: row;
 }
 .left-profile{
-    padding-top: 1rem;
-    padding-left: 1rem;
     width: 20%;
     height: 100%;
     background-color: var( --ColorBoxshadow);
     display: flex;
-    align-items: baseline;
-    justify-content: baseline;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
 }   
+.return{
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.img1{
+    width: 10%;
+    padding: 0;
+    margin: 0;
+}
+.link-return{
+    margin: 0;
+}
+.img2{
+    width:  70px;
+    height: 70px;
+    margin-top: 1rem;
+    
+}
+.options{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+}
+a{
+    text-decoration: none;
+    color: var(--ColorText);
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    font-size: 24px;
+    font-weight: bold;
+    transition: 400ms;    
+    
+}
+a:hover{
+    color: rgba(0, 0, 0, 0.363);
+}
 .right-profile{
     width: 80%;
     height: 100%;
@@ -40,43 +78,20 @@ body *{
     display: none;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-
+    flex-direction: column;     
 } 
-.main-profile .left-profile .img-profile{
-    border-radius: 50%;
-    background-color: var(--ColorText);
-    width: 50px;
-    height: 50px;
-}
-.main-profile .start-profile > h1, h3{
+h3{
     color: #00ff88;
+    font-weight: bold;
 }
-.main-profile .details-profile > h2, p{
+.main-profile .details-profile > h3, p{
     color: #00ff88;
 }
 .main-profile .details-profile .bold, i{
     color: #00ff88;
     font-weight: bold;
 }
-.options{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-left: 1rem;
-}
-a{
-    text-decoration: none;
-    color: var(--ColorText);
-    padding: 2px;
-    font-size: 20px;
-    transition: 400ms;    
-}
-a:hover{
-    color: #ffff;
-}
-@media only screen and (max-width: 880px){
+@media only screen and (max-width: 990px){
     .left-profile{
         display: flex;
         align-items: center;
@@ -101,9 +116,25 @@ a:hover{
         display: none;
     }
     .right-profile2{
-        display: block;
+        display: flex;
+    }
+    .details-profile{
+        margin-left: 1rem;
+    }
+    .start-profile{
+        margin-left: 1rem;
     }
     .options{
         display: none;
+    }
+    .img1{
+        width: 5%;
+        padding: 0;
+        margin: 0;
+    }
+    .img2{
+        width:  90px;
+        height: 90px;
+        margin-top: 1rem;
     }
 }
