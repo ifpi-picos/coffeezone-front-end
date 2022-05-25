@@ -1,5 +1,3 @@
-/* trocar 'function' */
-
 function ValidateName(name) {
   if (/^[A-ZÀ-Ÿ][A-zÀ-ÿ']+\s([A-zÀ-ÿ']\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/.test(name)) return true;
   return false;
@@ -50,16 +48,16 @@ function submit () {
     const inputEmail = document.querySelector('input[type="email"]').value;
     const inputPassword = document.querySelector('input[type="password"]').value;
     const inputPhone = document.querySelector('input[type="tel"]').value;
-    const inputFunction = document.querySelector('input[type="text"][placeholder="Função"]').value;
-    const radioFunction = document.querySelector('.signinInputRadio:checked').getAttribute('id');
+    const inputOccupation = document.querySelector('input[type="text"][placeholder="Função"]').value;
+    const radioOccupation = document.querySelector('.signinInputRadio:checked').getAttribute('id');
 
     const obj = {
       name: inputName,
       email: inputEmail,
       password: inputPassword,
       phone: inputPhone,
-      occupation: inputFunction,
-      type: radioFunction
+      occupation: inputOccupation,
+      type: radioOccupation
     }
       
     console.log(obj)
@@ -72,3 +70,4 @@ const button = document.querySelector('button');
 button.addEventListener('click', (e) => {
   submit();
 })
+
