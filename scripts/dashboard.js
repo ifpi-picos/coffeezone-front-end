@@ -28,9 +28,18 @@ function showDayNumber(){
   now = new Date();
   day = now.getDate();
   document.getElementById('txtDayNumber').innerHTML = day;
+  //document.getElementById('txtDayWeekSecond').innerHTML = day;
+  //document.getElementById('txtDayWeekThird').innerHTML = day + 15;
   setTimeout('showDayNumber()', 500);
 }
-
+/*
+function dayTomorrow(){
+  today = new Date()
+  tomorrow = new Date(today)
+  tomorrow.setDate(tomorrow.getDate() + 1)
+}
+console.log(dayTomorrow())
+*/
 //Menu mobile
 
 const btnMobile = document.getElementById('btn-mobile');
@@ -60,13 +69,17 @@ function drawChart() {
     ['Task', 'Hours per Day'],
     ['Vagas ocupadas', 20],
     ['Vagas Disnponíveis', 80]
+    
   ]);
 
   let options = {
     colors: ['#514869', '#00FF88'],
+    fill: '#1e0e2cd8'
 
   };
+
   let chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);
 }
+//chart.draw(data, google.charts.Bar.convertOptions(options));    
 chart.draw(data, options);    
