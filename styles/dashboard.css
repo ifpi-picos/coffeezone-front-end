@@ -66,6 +66,7 @@ ul li a{
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: 0.05ms;
+    display: inline;
 }
 ul li:hover a{
     color: var(--buttoncontent);
