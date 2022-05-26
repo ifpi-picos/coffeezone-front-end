@@ -4,35 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COFFEE ZONE</title>
-    <link rel="stylesheet" href="./styles/dashboard.css">
-    <link rel="stylesheet" href="./styles/global.css">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <title>Dashboard</title>
 </head>
-<!-- Create dashboard / mobile and desktop -->
-<body onload="realTime(), realDate(), drawChart()">
-    <header id="header">
-        <h1 id="logoName">COFFEE ZONE</h1>
-        <nav id="nav">
-            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-                <span id="hamburger"></span>
-              </button>
-            <ul id="menu" role="menu">
-                <li><a href="userprofilescreen.html">Perfil</a></li>
-                <li><a href="dashboard.html">Atividade</a></li>
-                <li><a href="bookingandscheduling.html">Reservas</a></li>
-                <li><a href="index.html">Sair</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="whiteBar">
-        <h1>Ocupação da Sala</h1>
-        <div id="txtHours"></div>
-        <div id="txtDate"></div>
-        <div id="piechart"></div>
-        <form action="bookingandscheduling.html"><button id="reserve">RESERVAR VAGA</button></form>
-    </section>
-    <script src="./scripts/dashboard.js"></script>
-</body>
+<body>
+    <ul>
+        <li style="--i:5;"><a href="userprofilescreen.html">Perfil</a></li>
+        <li style="--i:4;"><a href="">Atividades</a></li>
+        <li style="--i:3;"><a href="graficos.html">Graficos</a></li>
+        <li style="--i:2;"><a href="reservas.html">Reservas</a></li>
+        <li style="--i:1;"><a href="#">Sair</a></li>
+    </ul>
     
-</html>
+</body>
+</html> 
