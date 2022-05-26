@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COFFEE ZONE</title>
-    <link rel="stylesheet" href="styles/graficos.css">
+    <link rel="stylesheet" href="styles/graphics.css">
     <link rel="stylesheet" href="./styles/global.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
 </head>
 <!-- Create dashboard / mobile and desktop -->
 <body onload="realTime(), realDate(), drawChart()">
-    <header id="header">
-        <h1 id="logoName">COFFEE ZONE</h1>
+
+    <header id="header" style="display: none;">
+        <a class="link-return" href="dashboard.html"><img id="return" src="img/return.png" alt="botão de retorno"></a>   
+
         <nav id="nav">
             <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
                 <span id="hamburger"></span>
@@ -24,7 +27,10 @@
             </ul>
         </nav>
     </header>
+
+
     <section id="whiteBar">
+        <a class="link-return" href="dashboard.html"><img id="return" src="img/return.png" alt="botão de retorno"></a>
         <h1>Ocupação da Sala</h1>
         <div id="txtHours"></div>
         <div id="txtDate"></div>

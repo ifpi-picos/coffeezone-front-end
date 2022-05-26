@@ -74,9 +74,10 @@ function drawChart() {
 
   let options = {
     colors: ['#514869', '#00FF88'],
-    fill: '#1e0e2cd8'
+    backgroundColor: '#40324c',
 
   };
+
 
   let chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);
