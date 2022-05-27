@@ -1,140 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Mada&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap');
-body{
+*{
     margin: 0;
-}
-body *{
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans', sans-serif;
 }
-.main-profile{
-    height: 100vh;
-    width: 100vw;
+
+.container{
+    background-color: var(--colorbackgroundcolor);
+    position: relative;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-.left-profile{
-    width: 20%;
-    height: 100%;
-    background-color: var( --ColorBoxshadow);
-    display: flex;
-    align-items: center;
     flex-direction: column;
-}   
+    justify-content: center;
+    align-items: center;
+    gap: 5rem; 
+}
+
 .return{
-    display: block;
-    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.return img{
+    width: 7rem;
+}
+
+.imgPerfil img{
+    width: 10rem;
+    border-radius: 50%;
+}
+
+.infos{
+    display: flex; 
+    gap: 5rem;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
 }
-.img1{
-    width: 10%;
-    padding: 0;
-    margin: 0;
+
+.infos > div{
+    max-width: 400px;
 }
-.link-return{
-    margin: 0;
-}
-.img2{
-    width:  70px;
-    height: 70px;
-    margin-top: 1rem;
-    
-}
-.options{
+
+.infoLeft, .infoRight{
     display: flex;
-    align-items: center;
     flex-direction: column;
-    margin-top: 10%;
+    gap: .5rem;
 }
-a{
-    text-decoration: none;
-    color: var(--ColorText);
-    padding: 1rem 0;
-    margin: 0 1rem;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-    font-size: 24px;
-    font-weight: bold;
-    transition: 400ms;    
-    
-}
-a:hover{
-    color: rgba(0, 0, 0, 0.363);
-}
-.right-profile{
-    width: 80%;
-    height: 100%;
-    background-color: var(--BackgroundColorInput);
-    display: flex;
-    align-items: baseline;
-    justify-content: baseline;
-    flex-direction: column;
-    padding-left: 1rem;
-}
-.right-profile2{
+
+button{
     width: 100%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;     
-} 
-h3{
-    color: #00ff88;
-    font-weight: bold;
-}
-.main-profile .details-profile > h3, p{
-    color: #00ff88;
-}
-.main-profile .details-profile .bold, i{
-    color: #00ff88;
-    font-weight: bold;
-}
-@media only screen and (max-width: 990px){
-    .left-profile{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-    .options{
-        margin: 0rem;
-        padding-top: 1rem;
-    }
-}
-@media only screen and (max-width: 600px){
-    .main-profile{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .left-profile{
-        width: 100%;
-    }
-    .right-profile{
-        display: none;
-    }
-    .right-profile2{
-        display: flex;
-    }
-    .details-profile{
-        margin-left: 1rem;
-    }
-    .start-profile{
-        margin-left: 1rem;
-    }
-    .options{
-        display: none;
-    }
-    .img1{
-        width: 5%;
-        padding: 0;
-        margin: 0;
-    }
-    .img2{
-        width:  90px;
-        height: 90px;
-        margin-top: 1rem;
-    }
 }
