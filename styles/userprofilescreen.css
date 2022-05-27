@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background:  rgb(30, 14, 44);
+}
 
 .container{
     background-color: var(--colorbackgroundcolor);
@@ -58,7 +61,7 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 50vh;
     background: radial-gradient(var(--colorbackgroundcolor));
 }
 
@@ -66,7 +69,7 @@ button{
     position: relative;
     width: 800px;
     height: 160px;
-    background-color: #333;
+    background: #333;
     transform-origin: bottom;
     transform: perspective(500px) rotateX(30deg);
 }
@@ -108,10 +111,10 @@ button{
     position: absolute;
     left: 50%;
     width: 95%;
-    transform: translateX(-50%);
-    height: 60px;
-    background: linear-gradient(rgba(0,0,0,.25) transparent);
-    bottom: -93px;
+    transform: translateX(-51%);
+    height: 64px;
+    background: linear-gradient(rgba(0,0,0,.25), transparent);
+    bottom: -94px;
 }
 
 .box{
@@ -138,7 +141,7 @@ button{
     position: relative;
     width: 100px;
     height: 100px;
-    background-color: #000;
+    background-color: var(--Colorbutton);
     transform-origin: bottom right;
     animation: animate 1s linear infinite; 
 }
