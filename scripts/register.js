@@ -1,40 +1,44 @@
-function ValidateName(name) {
-  if (/^[A-ZÀ-Ÿ][A-zÀ-ÿ']+\s([A-zÀ-ÿ']\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/.test(name)) return true;
-  return false;
-}
-
 function ValidateEmail(email) {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) return true;
   return false;
 }
 
 function ValidatePhone(tel) {
-  if (/^(?:\+)[0-9]{2}\s?(?:\()[0-9]{2}(?:\))\s?[0-9]{4,5}(?:-)[0-9]{4}$/.test(tel)) /* +55 (89) 99415-3367 ou +55 (89) 9415-3367 */ return true;
+  if (/^(?:\+)[0-9]{2}\s?(?:\()[0-9]{2}(?:\))\s?[0-9]{4,5}(?:-)[0-9]{4}$/.test(tel)) return true;
   return false;
 }
 
-let nameValided = false;
+const url = 'https://coffeezone-backend.herokuapp.com/user/';
+
+function requisition (obj){
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(obj)
+  })
+
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+}
+
 let emailValided = false;
 let phoneValided = false;
 
-const inputName = document.querySelector('input[type="text"][placeholder="Nome"]');
-inputName.addEventListener('keyup', ({target}) => {
-  let name = target.value;  
-  nameValided = ValidateName(name);
-  ValidateName(name) ? inputName.style.border = '2px solid var(--ColorText)' : inputName.style.border = '2px solid red';
-  if(!name) inputName.style.border = 'none'; 
-})
-
 const inputEmail = document.querySelector('input[type="email"]');
-inputEmail.addEventListener('keyup', ({target}) => {
+const inputPhone = document.querySelector('input[type="tel"]');
+
+inputEmail.addEventListener('change', ({target}) => {
   let email = target.value;  
   emailValided = ValidateEmail(email)
   ValidateEmail(email) ? inputEmail.style.border = '2px solid var(--ColorText)' : inputEmail.style.border = '2px solid red';
   if(!email) inputEmail.style.border = 'none';
 })
 
-const inputPhone = document.querySelector('input[type="tel"]');
-inputPhone.addEventListener('keyup', ({target}) => {
+inputPhone.addEventListener('change', ({target}) => {
   let phone = target.value;  
   phoneValided = ValidatePhone(phone)
   ValidatePhone(phone) ? inputPhone.style.border = '2px solid var(--ColorText)' : inputPhone.style.border = '2px solid red';
@@ -42,32 +46,49 @@ inputPhone.addEventListener('keyup', ({target}) => {
 })
 
 function submit () {
-  if(nameValided && emailValided && phoneValided && document.querySelector('.signinInputRadio:checked') && document.querySelector('input[type="password"]').value){
+  
+  const inputPassword = document.querySelector('input[type="password"]');
+  const inputName = document.querySelector('input[type="text"][placeholder="Nome"]');
+  
+  let inputRadio;
+  if(document.querySelector('.signinInputRadio:checked')){
+    inputRadio = document.querySelector('.signinInputRadio:checked');
+  }
+  
+  let sendPhone;
+  phoneValided || inputPhone.value === '' ? sendPhone = true : sendPhone = false;
 
-    const inputName = document.querySelector('input[type="text"][placeholder="Nome"]').value;
-    const inputEmail = document.querySelector('input[type="email"]').value;
-    const inputPassword = document.querySelector('input[type="password"]').value;
-    const inputPhone = document.querySelector('input[type="tel"]').value;
-    const inputOccupation = document.querySelector('input[type="text"][placeholder="Função"]').value;
-    const radioOccupation = document.querySelector('.signinInputRadio:checked').getAttribute('id');
+  if(sendPhone && emailValided && inputName.value && inputRadio && inputPassword.value.length > 7){
+
+    const inputNameValue = inputName.value;
+    const inputEmailValue = inputEmail.value;
+    const inputPasswordValue = inputPassword.value;
+    const inputPhoneValue = inputPhone.value;
+    const inputOccupationValue = document.querySelector('input[type="text"][placeholder="Função"]').value;
+    const radioOccupationValue = inputRadio.getAttribute('id');
 
     const obj = {
-      name: inputName,
-      email: inputEmail,
-      password: inputPassword,
-      phone: inputPhone,
-      occupation: inputOccupation,
-      type: radioOccupation
+      name: inputNameValue, 
+      email: inputEmailValue,
+      password: inputPasswordValue,
+      phone: inputPhoneValue,
+      occupation: inputOccupationValue,
+      type: radioOccupationValue
     }
       
     console.log(obj)
+    requisition(obj);
   } else {
-    console.log('preencha todos os campos corretamente');
-  }
+    console.log("ERRO")
+    console.log('sendPhone', sendPhone)
+    console.log('emailValided', emailValided)
+    console.log('inputRadio', inputRadio)
+    console.log('inputPassword.value.lenght > 7', inputPassword.value.lenght > 7)
+    console.log('preencha os campos corretamente');
+  }      
 }
 
 const button = document.querySelector('button');
 button.addEventListener('click', (e) => {
   submit();
 })
-
