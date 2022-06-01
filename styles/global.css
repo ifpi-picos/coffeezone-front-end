@@ -39,6 +39,7 @@ button {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
+input[type="number"],
 input[type="password"] {
   border: none;
   border-radius: 10px;
@@ -55,6 +56,7 @@ input[type="password"] {
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="tel"]::placeholder,
+input[type="number"]::placeholder,
 input[type="password"]::placeholder {
   color: rgb(142, 152, 161);
 }
@@ -64,4 +66,13 @@ button {
 button:hover {
   color: #00ff88;
   background-color: rgba(0, 0, 0, 0.363);
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
+}
+
+input[type=number] { 
+ -moz-appearance: textfield;
+ appearance: textfield;
 }

@@ -17,17 +17,19 @@
     </div>
     <div class="div2">
       <div class="login-box">
+        <div id="loading" class=""></div>
         <h1>Criar conta</h1>
         <form>
-          <input type="text" class="siginInputText" placeholder="Nome">
+          <input type="text" class="siginInputText" placeholder="Nome" id="after">
           <input type="email" class="siginInputText" placeholder="E-mail">
           <input type="password" class="siginInputText" placeholder="Senha">
+          <input type="password" class="siginInputText" placeholder="Confirmar senha">
           <input type="tel" class="siginInputText" placeholder="Telefone">
           <input type="text" class="siginInputText" placeholder="Função">
           <div>
             <div class="inputRadio">
-              <input type="radio" id="cordinator" class="signinInputRadio" name="siginRadio">
-              <label for="cordinator">Coordenador</label>
+              <input type="radio" id="coordinator" class="signinInputRadio" name="siginRadio">
+              <label for="coordinator">Coordenador</label>
             </div>
             <div class="inputRadio">
               <input type="radio" id="member" class="signinInputRadio" name="siginRadio">
@@ -38,6 +40,7 @@
               <label for="visitor">Visitante</label>
             </div>
           </div>
+          <input type="number" class="siginInputText" placeholder="ID do cartão">
           <button type="button">Cadastrar</button>
         </form>
       </div>
