@@ -18,17 +18,21 @@
        <div class="right-login">
            <div class="card-login">
                <h1>LOGIN</h1>
+               <div id="msgError"> erro</div>
                <div class="textfield">
-                   <label for="usuario">E-mail</label>
-                   <input type="text" name="Usuario" placeholder="E-mail">
+                   <label id="userlabel" for="usuario">E-mail</label>
+                   <input type="text" id="usuario" placeholder="E-mail" required>
                </div>
                <div class="textfield">
-                <label for="password">Senha</label>
-                <input type="password" name="Senha" placeholder="Senha">
+                <label id="senhaLabel" for="password">Senha</label>
+                <input type="password" id="Senha" placeholder="Senha" required>
+               <!--  <i class="fa fa-eye" aria-hidden="true"></i> -->
             </div>
-            <button class="btn-login">Entrar</button>
+            <button onclick='entrar()' class="btn-login">Entrar</button>
         </div>
        </div>
    </div>  
 </body>
+<script src="scripts/loginpage.js"></script>
+
 </html>

@@ -103,4 +103,12 @@ body *{
 	}
 	
 }
+#msgError{
+	text-align: center;
+	color:var(--ColorText);
+	background-color: var(BackgroundColorInput);
+	padding: 10px;
+	border-radius: 4px;
+	display: none;
+}
 
