@@ -48,18 +48,41 @@ a{
     max-width: 400px;
 }
 
+.infoLeft{
+    align-items: center;
+}
+
 .infoLeft, .infoRight{
     display: flex;
     flex-direction: column;
     gap: .5rem;
 }
 
-button{
-    width: 100%;
+.afterDelete{
+    display: none;
+    background-color: var(--ColorBoxshadow);
+    align-items: center;
+    border-radius: 10px;
+    width: 40%;
 }
 
+h3{
+    padding: 10px;
+    padding-bottom: 2rem; 
+}
 
+.confirmDelete{
+    padding: 10px;
+    gap: 120px;  
+    display: flex;  
 
+}
+
+.y .n{
+    width: 100%;
+    padding: 40px;
+
+}
 
 .outroContainer{
     display: flex;

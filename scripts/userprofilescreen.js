@@ -7,6 +7,7 @@ const infomember = document.querySelector('.infomember')
 const infoemail = document.querySelector('.infoemail')
 const infophone = document.querySelector('.infophone')
 const infolinkedin = document.querySelector('.infolinkedin')
+const infogithub = document.querySelector('.infogithub')
 
 const token = localStorage.getItem('token')
 
@@ -30,6 +31,7 @@ function useInfos(a){
   infomember.innerText = a.type
   infophone.innerText = a.phone
   infolinkedin.innerText = a.linkedin
+  infolinkedin.innerText = a.github
 }
 
 fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
@@ -39,3 +41,45 @@ fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
     useInfos(infos)
   })
   .catch(error => console.log('error', error));
+
+  const Delete = document.querySelector('.delete')
+  
+  Delete.addEventListener('click',function(){
+    const infosUser = document.querySelector('.infoRight')
+    infosUser.style.display = 'none'
+    const screenDelete = document.querySelector('.afterDelete')
+    screenDelete.style.display = 'block'
+  })
+
+  const nDelete = document.querySelector('.n')
+
+  nDelete.addEventListener('click', function(){
+    const nUser = document.querySelector('.infoRight')
+    nUser.style.display = 'flex'
+    const nScreenDelete = document.querySelector('.afterDelete')
+    nScreenDelete.style.display = 'none'
+  })
+
+  const yDelete = document.querySelector('.y')
+
+  yDelete.addEventListener('click', function(){
+    
+    var requestOptions = {
+      method: 'DELETE',
+      headers: {
+        Accept: 'application/json',
+          'Content-Type': 'application/json',
+        Authorization: token
+      }
+    }
+
+    let deleteInfo;
+
+    fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
+  .then(response => response.text())
+  .then(result => {
+    deleteInfo = JSON.parse(result)
+    useInfos(infos)
+  })
+  .catch(error => console.log('error', error));
+  })
