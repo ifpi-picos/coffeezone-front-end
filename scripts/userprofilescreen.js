@@ -34,52 +34,89 @@ function useInfos(a){
   infolinkedin.innerText = a.github
 }
 
-fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
-  .then(response => response.text())
-  .then(result => {
-    infos = JSON.parse(result)
-    useInfos(infos)
-  })
-  .catch(error => console.log('error', error));
+// fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
+//   .then(response => response.text())
+//   .then(result => {
+//     infos = JSON.parse(result)
+//     useInfos(infos)
+//   })
+//   .catch(error => console.log('error', error));
 
-  const Delete = document.querySelector('.delete')
+//   const Delete = document.querySelector('.delete')
   
-  Delete.addEventListener('click',function(){
-    const infosUser = document.querySelector('.infoRight')
-    infosUser.style.display = 'none'
-    const screenDelete = document.querySelector('.afterDelete')
-    screenDelete.style.display = 'block'
-  })
+//   Delete.addEventListener('click',function(){
+//     const infosUser = document.querySelector('.infoRight')
+//     infosUser.style.display = 'none'
+//     const screenDelete = document.querySelector('.afterDelete')
+//     screenDelete.style.display = 'block'
+//   })
 
-  const nDelete = document.querySelector('.n')
+  // const nDelete = document.querySelector('.n')
 
-  nDelete.addEventListener('click', function(){
-    const nUser = document.querySelector('.infoRight')
-    nUser.style.display = 'flex'
-    const nScreenDelete = document.querySelector('.afterDelete')
-    nScreenDelete.style.display = 'none'
-  })
+  // nDelete.addEventListener('click', function(){
+  //   const nUser = document.querySelector('.infoRight')
+  //   nUser.style.display = 'flex'
+  //   const nScreenDelete = document.querySelector('.afterDelete')
+  //   nScreenDelete.style.display = 'none'
+  // })
 
-  const yDelete = document.querySelector('.y')
+  // const yDelete = document.querySelector('.y')
 
-  yDelete.addEventListener('click', function(){
+  // yDelete.addEventListener('click', function(){
     
-    var requestOptions = {
-      method: 'DELETE',
-      headers: {
-        Accept: 'application/json',
-          'Content-Type': 'application/json',
-        Authorization: token
-      }
+  //   var requestOptions = {
+  //     method: 'DELETE',
+  //     headers: {
+  //       Accept: 'application/json',
+  //         'Content-Type': 'application/json',
+  //       Authorization: token
+  //     }
+  //   }
+
+  //   let deleteInfo;
+
+  //   fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
+  // .then(response => response.text())
+  // .then(result => {
+  //   deleteInfo = JSON.parse(result)
+  //   useInfos(infos)
+  // })
+  // .catch(error => console.log('error', error));
+  // })
+
+  /*class MobileMenu{
+    constructor(mobileMenu, navList, navLinks) {
+      this.mobileMenu = documento.querySelector(mobileMenu);
+      this.navList = documento.querySelector(navList);
+      this.navLinks = documento.querySelectorAll(navLinks);
+      this.activeClass = 'active';
+    }
+    addClickEvent() {
+      this.mobileMenu.addEventListener('click', () => console.log ('hey!!'));
     }
 
-    let deleteInfo;
+    init() {
+      if (this.mobileMenu) {
+        this.addClickEvent();
+      }
+      return this;
+    }
+  }
 
-    fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
-  .then(response => response.text())
-  .then(result => {
-    deleteInfo = JSON.parse(result)
-    useInfos(infos)
-  })
-  .catch(error => console.log('error', error));
-  })
+  const MobileMenu = new MobileMenu(
+    '.mobileMenu',
+    '.navList',
+    'a',
+  );*/
+ 
+const mobileMenu = document.querySelector('.mobileMenu')
+const navList = document.querySelector('.navList')
+mobileMenu.addEventListener('click', ()=>{
+  if(navList.classList.contains('navListHidden')){
+    console.log('tem a classe')
+    navList.classList.remove('navListHidden')
+  } else{
+    navList.classList.add('navListHidden')
+    console.log('não tem a classe') 
+  }
+})
