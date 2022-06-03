@@ -20,12 +20,21 @@
         <div id="loading" class=""></div>
         <h1>Criar conta</h1>
         <form>
-          <input type="text" class="siginInputText" placeholder="Nome" id="after">
-          <input type="email" class="siginInputText" placeholder="E-mail">
-          <input type="password" class="siginInputText" placeholder="Senha">
-          <input type="password" class="siginInputText" placeholder="Confirmar senha">
-          <input type="tel" class="siginInputText" placeholder="Telefone">
-          <input type="text" class="siginInputText" placeholder="Função">
+          <div class="divName">
+            <input type="text" class="siginInputText" placeholder="Nome">
+          </div>
+          <div class="divEmail">
+            <input type="email" class="siginInputText" placeholder="E-mail">
+          </div>
+          <div class="divPassword">
+            <input type="password" class="siginInputText" placeholder="Senha">
+          </div>
+          <div class="divConfirmPassword">
+            <input type="password" class="siginInputText" placeholder="Confirmar senha">
+          </div>
+          <div class="divOccupation">
+            <input type="text" class="siginInputText" placeholder="Função">
+          </div>
           <div>
             <div class="inputRadio">
               <input type="radio" id="coordinator" class="signinInputRadio" name="siginRadio">
@@ -35,12 +44,14 @@
               <input type="radio" id="member" class="signinInputRadio" name="siginRadio">
               <label for="member">Membro</label>
             </div>
-            <div class="inputRadio">
+            <div class="inputRadio lastInputRadio">
               <input type="radio" id="visitor" class="signinInputRadio" name="siginRadio">
               <label for="visitor">Visitante</label>
             </div>
           </div>
-          <input type="number" class="siginInputText" placeholder="ID do cartão">
+          <div class="divOccupation divIdCard">
+            <input type="number" class="siginInputText" placeholder="ID do cartão">
+          </div>
           <button type="button">Cadastrar</button>
         </form>
       </div>
@@ -52,7 +63,3 @@
 
 </body>
 </html>
-
-
-
-<!-- document.querySelector('input[name="genderS"]:checked').value; -->

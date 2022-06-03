@@ -38,7 +38,6 @@ button {
 
 input[type="text"],
 input[type="email"],
-input[type="tel"],
 input[type="number"],
 input[type="password"] {
   border: none;
@@ -55,7 +54,6 @@ input[type="password"] {
 
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
-input[type="tel"]::placeholder,
 input[type="number"]::placeholder,
 input[type="password"]::placeholder {
   color: rgb(142, 152, 161);

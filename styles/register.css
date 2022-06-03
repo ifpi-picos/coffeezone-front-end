@@ -59,8 +59,7 @@ img{
 }
 
 .login-box{
-  background-color: var(--ColorBoxshadow);  
-  width: 17rem;
+  background-color: var(--ColorBoxshadow);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -74,6 +73,29 @@ img{
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+form div{
+  width: 100%;
+}
+
+form div input{
+  width: 100%;
+}
+
+.mensageError{
+/*   color: red; */
+  font-size: .8rem;
+  margin-left: .5rem;
+  margin-top: .25rem;
+}
+
+.login-box input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--BackgroundColorInput) inset;
+}
+
+.login-box input:-webkit-autofill {
+  -webkit-text-fill-color: white  !important;
 }
 
 .login-box form div.inputRadio{
@@ -101,6 +123,10 @@ div.inputRadio + div.inputRadio{
 
 input[placeholder="ID do cartão"]{
   display: none;
+}
+
+input[type="radio"], label{
+  cursor: pointer;
 }
 
 .login-box form button{
