@@ -12,17 +12,20 @@ body{
     position: relative;
     display: flex;
     flex-direction: column;
-    max-height: 100vh;
-    /*justify-content: center;*/
+    min-height: 100vh;
+    padding: 1rem;
     gap: 5rem; 
 }
 
 .mobileMenu{
-    /* display: none; */
     cursor: pointer;
     align-items: baseline;
     padding: 2px;
     z-index: 100;
+}
+
+.line1, .line2, .line3{
+    transition: 0.3s;
 }
 
 .mobileMenu div{
@@ -34,19 +37,22 @@ body{
 
 nav .navList{
     position: absolute;
-    background-color: #aaa;
+    left: 0;
+    margin-top: 0.5rem;
+    background-color: var(--ColorBoxshadow);
     display: flex;
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    max-width: 350px;
-    transition: .3s;
+    max-width: 400px;
+    border-radius: 10px;
+    transition: .4s;
 }
 
 .navListHidden{
     transform: translateY(-150%);
     visibility: hidden;
-    transition: .3s;
+    transition: .4s;
 }
 
 a{
@@ -57,11 +63,8 @@ a{
     padding: 2rem;
     font-size: 28px;
     font-weight: bold;
+    text-decoration: none;
 }
-
-/* nav .mobileMenu :hover .navList{
-    visibility: visible;
-} */
 
 .return{
     position: absolute;
@@ -79,26 +82,49 @@ a{
     gap: 5rem;
 }
 
-.imgPerfil img{
-    width: 10rem;
+.infos1 img{
+    width: 100%;
     border-radius: 50%;
+    padding: 10px;
     
+}
+.imgPerfil img .infos1{
+    display: flex;
+    flex-direction: column;
+}
+.infos1 input{
+    width: 100%;
+}
+.infos1 button{
+    width: 100%;
+}
+.imgPerfil .infos2{
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgPerfil img .profileInputText{
+    display: flex;
+    flex-direction: column;
+}
+
+.profileInputText{
+    width: 5rem;
 }
 
 .infos1{
     display: flex;
     flex-direction: column;
+    padding-top: 1rem;
+    width: 10rem;
 }
 
 .infos{
-    display: flex; 
+    display: grid; 
     gap: 5rem;
     justify-content: center;
     align-items: center;
-}
-
-a{
-    text-decoration: none;
 }
 
 .infos > div{
@@ -121,13 +147,28 @@ a{
 
 }
 
+.infoRight1{
+    padding-right: 4rem;
+}
+
+.delete{
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    font-size: 28px;
+}
+
 .afterDelete{
     display: none;
     background-color: var(--ColorBoxshadow);
-    align-items: center;
     border-radius: 10px;
     width: 50%;
     align-items: center;
+    margin: 0 auto;
+}
+
+p{
+    font-size: 28px;
 }
 
 h3{
@@ -136,8 +177,8 @@ h3{
 }
 
 .confirmDelete{
+    justify-content: space-between;
     padding: 10px;
-    gap: 150px;  
     display: flex;  
 
 }
@@ -249,34 +290,48 @@ h3{
 
 @media (max-width: 600px) {
    
+    .container{
+        gap: 0;
+    }
+    
     .mobileMenu{
         display: block;
-    }
-   
-    .infoRight{
-        display: -webkit-box;
     }
     
     .imgPerfil{
         display: flex;
         justify-content: center;
+        flex-direction: column;
         gap: 3rem;
     }
-    
-    /* .navList{
-        position: absolute;
-        top: 8vh;
-        left: 0;
-        width: 50vw;
-        height: 100%;
-        background: var(--ColorBoxshadow);
+
+    .infos1{
+        display: flex;
         flex-direction: column;
-        align-items: baseline;
-        justify-content: space-around;
+        align-self: center;
+    }
+
+    .infos2{
+        padding-top: 1rem;
+    }
+    
+    .infos{
         display: block;
-        border-radius: 10px;
-        transform: translatey(160%);
-    } */
+        gap: 0;
+        max-width: 400px;
+        align-items: baseline;
+        padding-top: 1rem;
+    }
+   
+    .infoRight{
+        display: block;
+        flex-direction: column;
+        gap: 1px;
+    }
+    
+    .infoRight1{
+        padding-right: 0;
+    }
     
     a{
         color: var(--Colorbutton);
@@ -285,21 +340,16 @@ h3{
         align-items: center;
         padding: 1rem;
         margin: 1rem;
-        font-size: 28px;
+        font-size: 24px;
         font-weight: bold;
     }
 
-    .mobileMenu{
-        display: block;
+    .navList.active{
+        transform: translatey(0);
     }
-    
 }
-.navList.active{
-    transform: translatey(0);
-}
-
 .mobileMenu.active .line1{
-transform: rotate(-45deg) translate(-8px, 8px);
+    transform: rotate(-45deg) translate(-4.5px, 8px);
 }
 
 .mobileMenu.active .line2{
@@ -307,5 +357,5 @@ transform: rotate(-45deg) translate(-8px, 8px);
 }
 
 .mobileMenu.active .line3{
-    transform: rotate(45deg) translate(-5px, -7px);
+    transform: rotate(45deg) translate(-3px, -7px);
 }

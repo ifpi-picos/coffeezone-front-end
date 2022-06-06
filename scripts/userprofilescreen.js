@@ -13,15 +13,6 @@ const token = localStorage.getItem('token')
 
 /*var raw = "{\r\n    \"name\": \"User Complete Name\",\r\n    \"email\": \"user@email.com\",\r\n    \"phone\": \"+5589999999999\",\r\n    \"password\": \"userpassword\",\r\n    \"occupation\": \"User occupation\",\r\n    \"type\": \"Member\",\r\n    \"linkedin\": \"https://www.linkedin.com/in/userlinkedin/\" //Optional\r\n}";*/
 
-var requestOptions = {
-  method: 'GET',
-  headers: {
-    Accept: 'application/json',
-      'Content-Type': 'application/json',
-    Authorization: token
-    }
-};
-
 let infos;
 
 function useInfos(a){
@@ -32,91 +23,106 @@ function useInfos(a){
   infophone.innerText = a.phone
   infolinkedin.innerText = a.linkedin
   infolinkedin.innerText = a.github
+  // profileInputText.inerText = a.inputProfile
 }
 
-// fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
-//   .then(response => response.text())
-//   .then(result => {
-//     infos = JSON.parse(result)
-//     useInfos(infos)
-//   })
-//   .catch(error => console.log('error', error));
+var requestOptions = {
+  method: 'GET',
+  headers: {
+    Accept: 'application/json',
+      'Content-Type': 'application/json',
+    Authorization: token
+    }
+};
 
-//   const Delete = document.querySelector('.delete')
+fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
+  .then(response => response.text())
+  .then(result => {
+    infos = JSON.parse(result)
+    useInfos(infos)
+    if(infos.profileimage){
+      document.querySelector('img').setAttribute('src', infos.profileimage)
+    }
+  })
+  .catch(error => console.log('error', error));
+
+const Delete = document.querySelector('.delete')
   
-//   Delete.addEventListener('click',function(){
-//     const infosUser = document.querySelector('.infoRight')
-//     infosUser.style.display = 'none'
-//     const screenDelete = document.querySelector('.afterDelete')
-//     screenDelete.style.display = 'block'
-//   })
+Delete.addEventListener('click',function(){
+  const infosUser = document.querySelector('.infoRight')
+  infosUser.style.display = 'none'
+  const screenDelete = document.querySelector('.afterDelete')
+  screenDelete.style.display = 'block'
+})
 
-  // const nDelete = document.querySelector('.n')
+const nDelete = document.querySelector('.n')
 
-  // nDelete.addEventListener('click', function(){
-  //   const nUser = document.querySelector('.infoRight')
-  //   nUser.style.display = 'flex'
-  //   const nScreenDelete = document.querySelector('.afterDelete')
-  //   nScreenDelete.style.display = 'none'
-  // })
+nDelete.addEventListener('click', function(){
+  const nUser = document.querySelector('.infoRight')
+  nUser.style.display = '-webkit-box'
+  const nScreenDelete = document.querySelector('.afterDelete')
+  nScreenDelete.style.display = 'none'
+})
 
-  // const yDelete = document.querySelector('.y')
+const yDelete = document.querySelector('.y')
 
-  // yDelete.addEventListener('click', function(){
-    
-  //   var requestOptions = {
-  //     method: 'DELETE',
-  //     headers: {
-  //       Accept: 'application/json',
-  //         'Content-Type': 'application/json',
-  //       Authorization: token
-  //     }
-  //   }
-
-  //   let deleteInfo;
-
-  //   fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
-  // .then(response => response.text())
-  // .then(result => {
-  //   deleteInfo = JSON.parse(result)
-  //   useInfos(infos)
-  // })
-  // .catch(error => console.log('error', error));
-  // })
-
-  /*class MobileMenu{
-    constructor(mobileMenu, navList, navLinks) {
-      this.mobileMenu = documento.querySelector(mobileMenu);
-      this.navList = documento.querySelector(navList);
-      this.navLinks = documento.querySelectorAll(navLinks);
-      this.activeClass = 'active';
-    }
-    addClickEvent() {
-      this.mobileMenu.addEventListener('click', () => console.log ('hey!!'));
-    }
-
-    init() {
-      if (this.mobileMenu) {
-        this.addClickEvent();
-      }
-      return this;
+yDelete.addEventListener('click', function(){
+  var requestOptions = {
+    method: 'DELETE',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: token
     }
   }
 
-  const MobileMenu = new MobileMenu(
-    '.mobileMenu',
-    '.navList',
-    'a',
-  );*/
- 
+  let deleteInfo;
+
+  fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
+    .then(response => response.text())
+    .then(result => {
+      deleteInfo = JSON.parse(result)
+      localStorage.removeItem('token')
+      window.location.pathname = "/coffeezone-front-end/"
+    })
+    .catch(error => console.log('error', error));
+})
+
 const mobileMenu = document.querySelector('.mobileMenu')
 const navList = document.querySelector('.navList')
 mobileMenu.addEventListener('click', ()=>{
-  if(navList.classList.contains('navListHidden')){
-    console.log('tem a classe')
-    navList.classList.remove('navListHidden')
-  } else{
-    navList.classList.add('navListHidden')
-    console.log('não tem a classe') 
-  }
+  navList.classList.toggle('navListHidden');
+  mobileMenu.classList.toggle('active');
 })
+
+const imgProfile = document.querySelector('img')
+const profileInputText = document.querySelector('input')
+const buttonProfile = document.querySelector('button')
+buttonProfile.addEventListener('click', function() {
+
+  let askOptions = {
+    method: 'PATCH',
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token
+    },
+    body: JSON.stringify({
+      modify: {
+        profileimage: profileInputText.value
+      }
+    })
+  };
+
+  fetch("https://coffeezone-backend.herokuapp.com/user/", askOptions)
+    .then(response => response.text())
+    .then(result => {
+      console.log(JSON.parse(result))
+      profileInputText.value = ''
+      fetch("https://coffeezone-backend.herokuapp.com/user/", requestOptions)
+        .then(res => res.json())
+        .then((resJson) => {
+          document.querySelector('img').setAttribute('src', resJson.profileimage)
+        })
+    })
+    .catch(error => console.log('error', error));
+  })  
