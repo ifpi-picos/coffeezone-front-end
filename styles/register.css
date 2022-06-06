@@ -20,7 +20,7 @@
   color: white;
 }
 
-.left-register{
+.leftRegister{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +36,7 @@ img{
   width: 50vw;
 }
 
-.div2{
+.rightRegister{
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -46,7 +46,7 @@ img{
 .loading{
   width: 30px;
   height: 30px;
-  border: 8px solid #555;
+  border: 8px solid var(--ColorText);
   border-right-color: transparent;
   border-radius: 100%;
   animation: loading 1s infinite;
@@ -58,7 +58,7 @@ img{
   }
 }
 
-.login-box{
+.registerBox{
   background-color: var(--ColorBoxshadow);
   padding: 2rem;
   display: flex;
@@ -68,7 +68,7 @@ img{
   border-radius: 20px;
 }
 
-.login-box form{
+.registerBox form{
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -84,21 +84,33 @@ form div input{
 }
 
 .mensageError{
-/*   color: red; */
-  font-size: .8rem;
+  color: var(--colorMensageError);
   margin-left: .5rem;
   margin-top: .25rem;
 }
 
-.login-box input:-webkit-autofill {
+p.mensageError{
+  font-size: .8rem;
+}
+
+h2.mensageError{
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.mensageSucess{
+  color: var(--ColorText);
+}
+
+.registerBox input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px var(--BackgroundColorInput) inset;
 }
 
-.login-box input:-webkit-autofill {
+.registerBox input:-webkit-autofill {
   -webkit-text-fill-color: white  !important;
 }
 
-.login-box form div.inputRadio{
+div.inputRadio{
   display: flex;
   align-items: center;
   gap: .5rem;
@@ -108,16 +120,16 @@ div.inputRadio + div.inputRadio{
   margin-top: .5rem;
 }
 
-.login-box form div.inputRadio .signinInputRadio{
+.signinInputRadio{
   all: unset;
   width: .8rem;
   height: .8rem;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   border: 2px solid var(--ColorText);
   border-radius: 500%;
 }
 
-.login-box form div.inputRadio .signinInputRadio:checked{
+.signinInputRadio:checked{
   background-color: var(--ColorText);
 }
 
@@ -129,11 +141,7 @@ input[type="radio"], label{
   cursor: pointer;
 }
 
-.login-box form button{
-  cursor: pointer;
-}
-
-.container a.signinRedirectToLogin{
+a.signinRedirectToLogin{
   color: white;
   font-weight: 900;
 }
@@ -144,7 +152,7 @@ input[type="radio"], label{
     display: block;
   }
   
-  .login-box{
+  .registerBox{
     width: 30rem;
   }
 
@@ -165,7 +173,7 @@ input[type="radio"], label{
     max-width: 500px;
   }
 
-  .left-register{
+  .leftRegister{
     max-width: 50%;
   }
 

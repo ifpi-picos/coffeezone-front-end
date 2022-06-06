@@ -3,45 +3,75 @@ function ValidateEmail(email) {
   return false;
 }
 
-let emailValided = false;
+function treatingRes (status, resJson) {
+  switch(status){
+    case 201:
+      document.querySelector('.registerBox h1').style.display = "none";
+      document.querySelector('.registerBox form').style.display = "none";
+      document.querySelector('.registerBox').insertAdjacentHTML('afterbegin', '<h2 class="mensageSucess">Cadastro realizado com sucesso</h2>');
+      setTimeout(()=>{
+        window.location.pathname = '/login';
+      }, 3000)
+      break;
+    case 400:
+      switch (resJson.error){
+        case 'Cartão já cadastrado':
+          inputCardId.insertAdjacentHTML('afterend', `<p class="mensageError">${resJson.error}</p>`);
+          break;
+        case 'Nome inválido':
+          inputName.insertAdjacentHTML('afterend', `<p class="mensageError">${resJson.error}</p>`);
+          break;
+        case 'Email já cadastrado':
+          inputEmail.insertAdjacentHTML('afterend', `<p class="mensageError">${resJson.error}</p>`);
+          break;
+      }
+      break;
+    case 500:
+      document.querySelector('.registerBox h1').style.display = "none";
+      document.querySelector('.registerBox form').style.display = "none";
+      document.querySelector('.registerBox').insertAdjacentHTML('afterbegin', '<h2 class="mensageError">Ocorreu um erro inesperado, tente novamente</h2>');
+      setTimeout(()=>{
+        document.querySelector('h2').parentNode.removeChild(document.querySelector('h2'));
+        document.querySelector('.registerBox h1').style.display = "block";
+        document.querySelector('.registerBox form').style.display = "flex";
+      }, 3500)
+      break;
+    }
+}
 
 async function requisition (obj){
-
-  document.querySelector('.login-box h1').style.display = "none";
-  document.querySelector('.login-box form').style.display = "none";
+  document.querySelector('.registerBox h1').style.display = "none";
+  document.querySelector('.registerBox form').style.display = "none";
   document.querySelector('#loading').classList.add('loading');
 
-  try{
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(obj)
-    });
-    const resText = await response.text()
-    console.log(resText)
-  } catch(error){
-    console.log('erro no try catch do fetch', error)
-  }
+  let response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(obj)
+  });
+  let resJson = await response.json();
   
-  document.querySelector('#loading').classList.remove('loading')
-  document.querySelector('.login-box h1').style.display = "block";
-  document.querySelector('.login-box form').style.display = "flex";
+  document.querySelector('#loading').classList.remove('loading');
+  document.querySelector('.registerBox h1').style.display = "block";
+  document.querySelector('.registerBox form').style.display = "flex";
 
+  treatingRes(response.status, resJson);
 }
 
 function putBorder (condition, element) {
-  condition ? element.style.border = '2px solid var(--ColorText)' : element.style.border = '2px solid red';
+  condition ? element.style.border = '2px solid var(--ColorText)' : element.style.border = '2px solid var(--colorMensageError)';
 }
 
+let emailValided = false;
 const url = 'https://coffeezone-backend.herokuapp.com/user/';
 const inputCardId = document.querySelector('input[type="number"][placeholder="ID do cartão"]');
 const inputName = document.querySelector('input[type="text"][placeholder="Nome"]');
 const inputEmail = document.querySelector('input[type="email"]');
 const inputPassword = document.querySelector('input[type="password"][placeholder="Senha"]');
-const inputPassword2 = document.querySelector('input[type="password"][placeholder="Confirmar senha"]');
+const inputConfirmPassword = document.querySelector('input[type="password"][placeholder="Confirmar senha"]');
 const inputOccupation = document.querySelector('input[type="text"][placeholder="Função"]');
 const inputsRadio = document.querySelectorAll('input[type="radio"]');
 
@@ -52,18 +82,18 @@ inputName.addEventListener('input', ({target}) => {
 
 inputEmail.addEventListener('input', ({target}) => {
   let email = target.value;  
-  emailValided = ValidateEmail(email)
+  emailValided = ValidateEmail(email);
   putBorder(ValidateEmail(email), target);
   if(target.value.length == 0) target.style.border = "none";
 })
 
 inputPassword.addEventListener('input', ({target}) => {
   putBorder(target.value.length > 7, target);
-  inputPassword2.value ? putBorder(inputPassword2 === inputPassword.value, inputPassword2) : null;
+  inputConfirmPassword.value ? putBorder(inputConfirmPassword === inputPassword.value, inputConfirmPassword) : null;
   if(target.value.length == 0) target.style.border = "none";
 })
 
-inputPassword2.addEventListener('input', ({target}) => {
+inputConfirmPassword.addEventListener('input', ({target}) => {
   putBorder(target.value === inputPassword.value, target);
   if(target.value.length == 0) target.style.border = "none";
 })
@@ -73,26 +103,24 @@ inputOccupation.addEventListener('input', ({target}) => {
   if(target.value.length == 0) target.style.border = "none";
 })
 
-/**/
-key = ''
+let key = '';
 
 window.addEventListener('keydown', function(event) {
   key = event.key;
 });
 
 window.addEventListener('click', (event) => {
-  key = ''
+  key = '';
 })
-/**/
 
 inputsRadio.forEach((element)=>{
   element.addEventListener('click', ({target})=>{
-    if(key !== 'Tab' && target.getAttribute('id') === 'coordinator' || target.getAttribute('id') === 'member'){
+    if(key !== 'Tab' && target.getAttribute('id') === 'Coordinator' || target.getAttribute('id') === 'Member'){
       inputCardId.style.display = "block";
-    } else if(target.getAttribute('id') === 'visitor'){
+    } else if(target.getAttribute('id') === 'Visitor'){
       inputCardId.style.display = "none";
       if(document.querySelector('.divIdCard p')){
-        inputCardId.parentNode.removeChild(document.querySelector('.divIdCard p'))
+        inputCardId.parentNode.removeChild(document.querySelector('.divIdCard p'));
       }
     }
   })
@@ -104,35 +132,29 @@ inputCardId.addEventListener('input', ({target}) => {
 })
 
 function submit () {
-
-  const mensagesErro = document.querySelectorAll('.mensageError')
-  mensagesErro.forEach((p)=>{
+  const mensagesError = document.querySelectorAll('.mensageError');
+  mensagesError.forEach((p)=>{
     p.parentNode.removeChild(p);
   })
 
   let problem = false;
   if(inputName.value < 2){
-    console.log('preencha o nome corretamente')
     inputName.insertAdjacentHTML('afterend', '<p class="mensageError">Preencha o nome corretamente</p>');
     problem = true;
   } 
   if(!ValidateEmail(inputEmail.value)){
-    console.log('preencha o email corretamente')
     inputEmail.insertAdjacentHTML('afterend', '<p class="mensageError">Preencha o email corretamente</p>');
     problem = true;
   }
-  if(inputPassword.value < 8){
-    console.log('preencha a senha corretamente')
+  if(inputPassword.value.length < 8){
     inputPassword.insertAdjacentHTML('afterend', '<p class="mensageError">Preencha a senha corretamente</p>');
     problem = true;
   }
-  if(inputPassword2.value === inputPassword.value){
-    console.log('preencha a confirmação de senha corretamente')
-    inputPassword2.insertAdjacentHTML('afterend', '<p class="mensageError">Preencha a confirmação de senha corretamente</p>');
+  if(inputConfirmPassword.value !== inputPassword.value){
+    inputConfirmPassword.insertAdjacentHTML('afterend', '<p class="mensageError">Preencha a confirmação de senha corretamente</p>');
     problem = true;
   }
   if(inputOccupation.value < 3){
-    console.log('preencha a ocupação corretamente')
     inputOccupation.insertAdjacentHTML('afterend', '<p class="mensageError">Preencha a sua função corretamente</p>');
     problem = true;
   }
@@ -141,19 +163,16 @@ function submit () {
   if(document.querySelector('.signinInputRadio:checked')){
     inputRadio = document.querySelector('.signinInputRadio:checked').getAttribute('id');
   } else if(!document.querySelector('.signinInputRadio:checked')){
-    console.log('escolha o tipo de usuário')
     document.querySelector('.lastInputRadio').insertAdjacentHTML('afterend', '<p class="mensageError">Escolha uma opção</p>');
     problem = true;
   }
 
   if(window.getComputedStyle(inputCardId).getPropertyValue('display') != "none" && inputCardId.value.length != 10){
-    console.log('preencha o id do cartão corretamente')
     inputCardId.insertAdjacentHTML('afterend', '<p class="mensageError">Preencha o id do cartão corretamente</p>');
     problem = true;
   }
 
   if(!problem){
-
     let object;
     switch(inputRadio){
       case 'visitor':
@@ -164,24 +183,9 @@ function submit () {
           occupation: inputOccupation.value,
           type: inputRadio
         }
-    
-        for(property in object){
-          if(object[property] === ''){
-            delete object[property]
-          }
-        } 
-
-        console.log(object);
-        requisition(object);
-        break
-
+        break;
       default:
-        if(!inputCardId.value) {
-          console.log('preencha o campo de id do cartão')
-          break
-        }
-
-        object = {
+          object = {
           name: inputName.value, 
           email: inputEmail.value,
           password: inputPassword.value,
@@ -189,18 +193,15 @@ function submit () {
           type: inputRadio,
           cardid: inputCardId.value
         }
-    
-        for(property in object){
-          if(object[property] === ''){
-            delete object[property]
-          }
-        }
-
-        requisition(object);
     }
 
-  } else {
-    console.log("ERRO")
+    for(property in object){
+      if(object[property] === ''){
+        delete object[property];
+      }
+    } 
+
+    requisition(object);
   }
 }
 
