@@ -111,6 +111,32 @@ body *{
 	border-radius: 4px;
 	display: none;
 }
-#eyeSvg{
-	display:flex;
+.vr-senha{
+	position: relative;
+
+
 }
+
+
+
+
+.textfield > div{
+	width: 100%;
+	position: relative;
+}
+
+.textfield > div img{
+	position: absolute;
+	right: .8rem;
+	top: .8rem; 
+}
+
+.divFieldPassword{
+	width: 100%;
+}
+
+#Senha{
+	width: 100%;
+}
+
+
