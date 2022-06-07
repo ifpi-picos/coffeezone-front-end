@@ -1,5 +1,3 @@
-/*var myHeaders = new Headers();
-myHeaders.append("Authorization", "TokenProvidedOnLogin");*/
 
 const infoname = document.querySelector('.infoname')
 const infofuction = document.querySelector('.infofuction')
@@ -11,7 +9,6 @@ const infogithub = document.querySelector('.infogithub')
 
 const token = localStorage.getItem('token')
 
-/*var raw = "{\r\n    \"name\": \"User Complete Name\",\r\n    \"email\": \"user@email.com\",\r\n    \"phone\": \"+5589999999999\",\r\n    \"password\": \"userpassword\",\r\n    \"occupation\": \"User occupation\",\r\n    \"type\": \"Member\",\r\n    \"linkedin\": \"https://www.linkedin.com/in/userlinkedin/\" //Optional\r\n}";*/
 
 let infos;
 
@@ -23,7 +20,6 @@ function useInfos(a){
   infophone.innerText = a.phone
   infolinkedin.innerText = a.linkedin
   infolinkedin.innerText = a.github
-  // profileInputText.inerText = a.inputProfile
 }
 
 var requestOptions = {
