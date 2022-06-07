@@ -65,7 +65,6 @@ function putBorder (condition, element) {
   condition ? element.style.border = '2px solid var(--ColorText)' : element.style.border = '2px solid var(--colorMensageError)';
 }
 
-let emailValided = false;
 const url = 'https://coffeezone-backend.herokuapp.com/user/';
 const inputCardId = document.querySelector('input[type="number"][placeholder="ID do cartão"]');
 const inputName = document.querySelector('input[type="text"][placeholder="Nome"]');
@@ -82,7 +81,6 @@ inputName.addEventListener('input', ({target}) => {
 
 inputEmail.addEventListener('input', ({target}) => {
   let email = target.value;  
-  emailValided = ValidateEmail(email);
   putBorder(ValidateEmail(email), target);
   if(target.value.length == 0) target.style.border = "none";
 })
