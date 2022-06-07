@@ -32,6 +32,14 @@ function showDayNumber(){
   //document.getElementById('txtDayWeekThird').innerHTML = day + 15;
   setTimeout('showDayNumber()', 500);
 }
+
+//Menu 
+const mobileMenu = document.querySelector('.mobileMenu')
+const navList = document.querySelector('.navList')
+mobileMenu.addEventListener('click', ()=>{
+  navList.classList.toggle('navListHidden');
+  mobileMenu.classList.toggle('active');
+})
 /*
 function dayTomorrow(){
   today = new Date()
@@ -40,25 +48,6 @@ function dayTomorrow(){
 }
 console.log(dayTomorrow())
 */
-//Menu mobile
-
-const btnMobile = document.getElementById('btn-mobile');
-
-function toggleMenu(event) {
-  if (event.type === 'touchstart') event.preventDefault();
-  const nav = document.getElementById('nav');
-  nav.classList.toggle('active');
-  const active = nav.classList.contains('active');
-  event.currentTarget.setAttribute('aria-expanded', active);
-  if (active) {
-    event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
-  } else {
-    event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
-  }
-}
-
-btnMobile.addEventListener('click', toggleMenu);
-btnMobile.addEventListener('touchstart', toggleMenu);
 
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
@@ -67,17 +56,23 @@ function drawChart() {
 
   let data = google.visualization.arrayToDataTable([
     ['Task', 'Hours per Day'],
-    ['Vagas ocupadas', 20],
-    ['Vagas Disnponíveis', 80]
+    ['Ocupado', 20],
+    ['Disponível', 80]
     
   ]);
 
   let options = {
     colors: ['#514869', '#00FF88'],
     backgroundColor: '#40324c',
-
+    pieSliceText: 'label', 
+    legend: 'none',
+    strokeWidth: 0,
+    pieSliceTextStyle: {
+      color: '#2f2841',
+      bold: true,
+      fontSize: 20,
+    },
   };
-
 
   let chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);

@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: "Noto Sans", sans-serif;
   padding: 0;
+  background-color: var(--backgroundMain);
 }
 
 :root {
