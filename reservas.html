@@ -10,8 +10,24 @@
     <link rel="stylesheet" href="./styles/bookingandscheduling.css">
 </head>
 <body onload="showDay(), showDayNumber()">
-    <script src="scripts/verifyLogin.js"></script>
-    <header id="header" style="display: none;">
+    <!-- <script src="scripts/verifyLogin.js"></script> -->
+
+    <nav>
+        <div class="mobileMenu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <div class="navList navListHidden">
+            <a href="userprofilescreen.html">Perfil</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="graphics.html">Gráficos</a>
+            <a href="reservas.html">Reservas</a>
+            <a href="index.html">Sair</a>
+        </div>
+    </nav>
+
+    <!-- <header id="header" style="display: none;">
         <a class="link-return" href="dashboard.html"><img id="return" src="img/return.png" alt="botão de retorno"></a>   
 
         <nav id="nav">
@@ -19,15 +35,19 @@
                 <span id="hamburger"></span>
               </button>
             <ul id="menu" role="menu">
-                <li><a href="">Atividades</a></li>
-                <li><a href="dashboard.html">Voltar</a></li>
+                <li><a href="userprofilescreen.html">Perfil</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="atividades.html">Atividades</a></li>
+                <li><a href="graphics.html">Gráficos</a></li>
                 <li><a href="index.html">Sair</a></li>
             </ul>
         </nav>
-    </header>
+    </header> -->
 
     <section id="whiteBar">
-        <a class="link-return" href="dashboard.html"><img id="return" src="img/return.png" alt="botão de retorno"></a>   
+        <!-- <a class="link-return" href="dashboard.html">
+            <img id="return" src="img/return.png" alt="botão de retorno">
+        </a>  -->   
         <h2>Reserve um dia</h2>
         <div id="itemsCalendar" >
             <div id="txtDayWeek"></div>
