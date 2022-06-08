@@ -75,3 +75,37 @@ input[type=number] {
  -moz-appearance: textfield;
  appearance: textfield;
 }
+
+.loading{
+  width: 30px;
+  height: 30px;
+  border: 8px solid var(--ColorText);
+  border-right-color: transparent;
+  border-radius: 100%;
+  animation: loading 1s infinite;
+}
+
+@keyframes loading{
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.mensageError{
+  color: var(--colorMensageError);
+  margin-left: .5rem;
+  margin-top: .25rem;
+}
+
+p.mensageError{
+  font-size: .8rem;
+}
+
+h2.mensageError{
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.mensageSucess{
+  color: var(--ColorText);
+} 
