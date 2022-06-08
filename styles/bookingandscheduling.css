@@ -143,7 +143,6 @@ a:hover {
 	height: 171px;
 	margin-top: 54px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 10px;
 }
 #itemsCalendar {
 	width: 107px;
@@ -232,7 +231,13 @@ a:hover {
 		width: 347px;
 		height: 58px;
 	}
-
+	#hours {
+		margin-right: 150px;
+	}
+	#inputReserve{
+		width: 320px;
+		height: 130px;
+	}
 	.mobileMenu {
 		display: block;
 	}
