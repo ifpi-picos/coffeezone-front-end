@@ -138,7 +138,13 @@ a:hover {
 	border-radius: 50%;
 	background-color: #00ff88;
 }
-
+#inputReserve{
+	width: 490px;
+	height: 171px;
+	margin-top: 54px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
 #itemsCalendar {
 	width: 107px;
 	height: 107px;
@@ -174,7 +180,7 @@ a:hover {
 }
 
 #hours {
-	margin-right: 200px;
+	margin-right: 300px;
 }
 
 /*Css reservas
