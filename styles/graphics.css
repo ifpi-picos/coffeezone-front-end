@@ -56,26 +56,11 @@ a:hover{
   color: #00ff88;
   background-color: rgba(0, 0, 0, 0.363);
 }
-#whiteBar {
+#Main {
   display: flex;
   justify-content: center;
   align-items: center;  
   flex-direction: column;
-}
-
-#reserve{
-    width: 264px;
-    height: 58px;
-    margin: 79px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-decoration: none;
-}
-#reserve:hover{
-  background-color: var(--colorbackgroundcolor);
-  color: var(--ColorText);
 }
 
 #piechart {
@@ -97,8 +82,7 @@ a:hover{
     transform: translatey(0);
   }
 
-  #whiteBar {
-    right: auto;
+  #Main {
     top: 135px;
     position: absolute;
   }
