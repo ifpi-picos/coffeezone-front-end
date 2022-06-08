@@ -8,8 +8,8 @@ body{
   min-height: 100vh;
 }
 
-.container{
-  background-color: var(--backgroundMain);
+nav{  
+  display: inline-block;
 }
 
 .mobileMenu{
@@ -71,4 +71,46 @@ a{
   font-size: 28px;
   font-weight: bold;
   text-decoration: none;
+}
+
+.header{
+  display: flex;
+}
+
+.header h1{
+  margin: auto;
+}
+
+.container{
+  background-color: var(--backgroundMain);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  gap: .5rem;
+}
+
+.top, .bottom{
+  min-height: 45vh;
+  display: flex;
+  gap: .5rem;
+}
+
+.left, .right{
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 2px black;
+  padding: 1rem;
+}
+
+@media (max-width: 800px) {
+  .top, .bottom{
+    min-height: auto;
+    flex-direction: column;
+  }  
+
+  .left, .right{
+    width: auto;
+  }
 }
