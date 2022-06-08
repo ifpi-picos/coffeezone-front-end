@@ -87,7 +87,9 @@ a:hover{
   color: var(--ColorText);
 }
 
-@media (max-width: 600px) {
+/* quando se chega a esse tamanho o gráfico quebra */
+
+/* @media (max-width: 600px) {
   .mobileMenu{
     display: block;
   }
@@ -104,7 +106,8 @@ a:hover{
     width: 340px;
     height: auto;
   }
-}
+} */
+
 .mobileMenu.active .line1{
   transform: rotate(-45deg) translate(-4.5px, 8px);
 }

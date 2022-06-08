@@ -14,7 +14,7 @@ function entrar() {
       response.json().then((json) => {
         if (json.token) {
           localStorage.setItem("token", json.token);
-          window.location.href = "dashboard.html " + window.location.hostname;
+          window.location.href = "dashboard"
         }
       });
     })
