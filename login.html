@@ -1,43 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=S, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/login.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=S, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/login.css" />
     <title>COFFEE ZONE</title>
-</head>
-<!-- create registration page / mobile and desktop (sales) -->
-<body>
-   <div class="main-login">
-       <div class="left-login">
-           <h1>Faça parte dos mambeers<br>sua jornada está só começando</h1> 
-           <img src="img/coffee.svg" class="left-login-img" alt="">
-       </div>
-       <div class="right-login">
-           <div class="card-login">
-               <h1>LOGIN</h1>
-               <div id="msgError"> erro</div>
-               <div class="textfield">
-                   <label id="userlabel" for="usuario">E-mail</label>
-                   <input type="text" id="usuario" placeholder="E-mail" >
-               </div>
-            <div class="divFieldPassword">
-                <div class="textfield">
-                    <label id="senhaLabel" for="password">Senha</label>
-                    <div>
-                        <input type="password" id="Senha" placeholder="Senha" >
-                        <img src="img/open.png" id="eyeSvg" onClick="eyeClick()" width="30px" >
-                    </div>
-                </div>
+  </head>
+  <!-- create registration page / mobile and desktop (sales) -->
+  <body>
+    <div class="main-login">
+      <div class="left-login">
+        <h1>Faça parte dos mambeers<br />sua jornada está só começando</h1>
+
+        <img src="img/coffee.svg" class="left-login-img" alt="" />
+      </div>
+
+      <div class="right-login">
+        <div class="card-login">
+          <h1>LOGIN</h1>
+
+          <div id="msgError">erro</div>
+
+          <div class="textfield">
+            <label id="userlabel" for="usuario">E-mail</label>
+
+            <input type="text" id="usuario" placeholder="E-mail" />
+          </div>
+
+          <div class="divFieldPassword">
+            <div class="textfield">
+              <label id="senhaLabel" for="password">Senha</label>
+
+              <div>
+                <input type="password" id="Senha" placeholder="Senha" />
+
+                <img
+                  src="img/open.png"
+                  id="eyeSvg"
+                  onClick="eyeClick()"
+                  width="30px"
+                />
+              </div>
             </div>
-            <button onClick='entrar()' class="btn-login">Entrar</button>
+          </div>
+
+          <button onClick="entrar()" class="btn-login">Entrar</button>
         </div>
-
-       </div>
-   </div>  
-</body>
-<script src="scripts/loginpage.js"></script>
-
+      </div>
+    </div>
+  </body>
+  <script src="scripts/loginpage.js"></script>
 </html>

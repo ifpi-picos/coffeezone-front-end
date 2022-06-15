@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Mada&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Noto Sans", sans-serif;
@@ -9,7 +16,7 @@ body {
 :root {
   --ColorText: #00ff88;
   --Colorbutton: #00ff88;
-  --colorbackgroundcolor: rgba(30, 14, 44, 0.815);
+  --colorbackgroundcolor: #1e0e2cd0;
   --ColorBoxshadow: #2f2841;
   --BackgroundColorInput: #514869;
   --buttoncontent: #000;

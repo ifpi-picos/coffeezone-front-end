@@ -22,7 +22,7 @@ body *{
 	align-items: center;
 	flex-direction: column;
 }
-.left-login > h1{
+.left-login > h1{ 
 	font-size: 3vw;
 
 }
