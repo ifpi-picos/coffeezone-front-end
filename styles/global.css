@@ -10,7 +10,8 @@ body {
   margin: 0;
   font-family: "Noto Sans", sans-serif;
   padding: 0;
-  background-color: var(--backgroundMain);
+  /* background-color: var(--backgroundMain); */
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 :root {
@@ -28,7 +29,7 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--ColorText);
+  color: white;
   font-weight: 700;
 }
 

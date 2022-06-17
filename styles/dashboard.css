@@ -1,26 +1,117 @@
+p{
+    color: white;
+}
+
 .container{
     display: flex;
 }
 
-.left, .right{
+/* .left, .right{
     height:100vh;
-}
+} */
 
 .left{
-    padding:2rem 0;
+    height: 95vh;
+    top: 5vh;
+    padding: 2rem 0;
     width: 3.5rem;
     background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
+    border-radius: 0 30px 30px 0;
+}
+
+.icon{
+    width: 25px;
+    margin-left: 14px;
+}
+
+a + a{
+    margin-top: .5rem;
 }
 
 .right{
-    padding:2rem;
+    height:100vh;
+    padding: 2rem;
     min-width: calc(100vw - 3.5rem);
     position: relative;
     left: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
-.top{
+.bottom{
+    width: 100%;
+    display: flex;
+    /*     align-items: center; */
+    /* flex-grow: 1; */
+    gap: 2rem;
+    justify-content: space-evenly;
+}
+
+.occupation{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 2rem; 
+    
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.occupation h1{
+    font-size: 3rem;
+}
+
+#currentTime{
+    margin: auto;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    box-shadow: 0 0px 2px 5px rgba(0,0,0,0.2);
+}
+
+.reservations{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.reservationsSide{
+    display: flex;
+    gap: 2rem;
+}
+
+.reservationTime, .reservationMaterial{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.reservations select{
+    width: 100%;
+}
+
+.divTextArea{
+    width: 100%;
+}
+
+.divTextArea p{
+    margin-bottom: .5rem;
+}
+
+.reservations textarea{
+    width: 100%;
+    min-height: 6rem;
+    padding: 0.75rem;
+}
+
+/* .top{
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
@@ -31,7 +122,7 @@
     display: flex;
     padding: 1rem;
 
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .graphics{
@@ -48,4 +139,4 @@
 
 .reservations{
     width: 80%;
-}
+} */

@@ -1,4 +1,4 @@
-//Time 
+/* //Time 
 const week = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
 function realTime() {
   today = new Date();
@@ -57,4 +57,14 @@ function drawChart() {
   chart.draw(data, options);
 }
 //chart.draw(data, google.charts.Bar.convertOptions(options));    
-chart.draw(data, options);    
+chart.draw(data, options);     */
+
+
+const occupation = document.querySelector('.occupation');
+let data = new Date;
+occupation.insertAdjacentHTML('beforeend', `<p id="currentTime">${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()} - ${data.getHours()}:${data.getMinutes()}</p>`);
+const currentTime = document.querySelector('#currentTime')
+setInterval(()=>{
+  data = new Date;
+  currentTime.innerText = `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()} - ${data.getHours()}:${data.getMinutes()}`
+}, 1000)

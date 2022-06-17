@@ -23,28 +23,72 @@
             <a href="alterProfile.html">Alterar informacoes</a> -->
             <div class="img"></div>
             <a href="dashboard.html">
-                <i><!-- dashboard --></i>
+                <img src="img/home.png" class="icon">
             </a>
             <a href="settings.html">
-                <i><!-- settings --></i>
+                <img src="img/setting-config.png" class="icon">
             </a>
         </div>
         <div class="right">
-            <!-- 
-                seForCoordenador
-                <div class="activites"></div> 
-            -->
-            <div class="top">
-                <h1>Mambee, escola frábrica de software</h1>
-                <div class="graphics"> 
+            <h1>Mambee, frábrica escola de software</h1>
+            <div class="bottom">
+                <div class="occupation">
                     <h2>Ocupação:</h2>
                     <h1>17/30</h1>
+                    <h2>Vagas disponíveis:</h2>
+                    <h2>13/30</h2>
                 </div>
-            </div>
-            <div class="reservations">
-                
+                <div class="reservations">
+                    <h1>Reservas</h1>
+                    <div class="reservationsSide">
+                        <div class="reservationTime">
+                            <h2>Reserva de horário</h2>
+                            <select name="selectTimeEntry">
+                                <!-- 7 -> 11 e 14 -> 20 -->
+                                <option selected disabled>Selecione um horário de entrada</option>
+                                <option value="7">7h</option>
+                                <option value="8">8h</option>
+                                <option value="9">9h</option>
+                                <option value="10">10h</option>
+                                <option value="11">11h</option>
+                            </select>
+                            <select name="selectTimeExit">
+                                <!-- 8 -> 12 e 13 -> 21 -->
+                                <option selected disabled>Selecione um horário de saída</option>
+                                <option value="8">8h</option>
+                                <option value="9">9h</option>
+                                <option value="10">10h</option>
+                                <option value="11">11h</option>
+                                <option value="12">12h</option>
+                            </select>
+                        </div>
+                        <div class="reservationMaterial">
+                             <h2>Reserva de material</h2>
+                             <select name="selectMaterial">
+                                 <option selected disabled>Selecione o material:</option>
+                                 <option value="headset">Headset</option>
+                                 <option value="caboVGA">Cabo VGA</option>
+                                 <option value="teclado">Teclado</option>
+                             </select>
+                             <select name="selectDateDevolution">
+                                 <option selected disabled>Selecione uma data de entrega:</option>
+                                 <option value="14/06">14/06</option>
+                                 <option value="15/06">15/06</option>
+                                 <option value="16/06">16/06</option>
+                                </select>
+                                <p>Data inicial: <!-- preencher com js --></p>
+                            </div>
+                    </div>
+                    <div class="divTextArea">
+                        <p>Motivo:</p>
+                        <textarea name="" id="" cols="" rows=""></textarea>
+                    </div>
+                    <button>Realizar reserva</button>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="scripts/dashboard.js"></script>
 </body>
 </html>
