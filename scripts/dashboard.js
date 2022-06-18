@@ -68,3 +68,16 @@ setInterval(()=>{
   data = new Date;
   currentTime.innerText = `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()} - ${data.getHours()}:${data.getMinutes()}`
 }, 1000)
+
+const iconProfile = document.querySelector('.iconProfile');
+const previewProfile = document.querySelector('.previewProfile');   
+iconProfile.addEventListener('mouseover', ()=>{
+  previewProfile.style.display = "block"
+})
+iconProfile.addEventListener('mouseout', ()=>{
+  previewProfile.style.display = "none"
+})
+iconProfile.addEventListener('click', ()=>{
+  const modalProfile = document.querySelector('.modalProfile')
+  modalProfile.classList.toggle('hidden')
+})

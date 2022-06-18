@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  font-family: "Noto Sans", sans-serif;
+/*   font-family: "Noto Sans", sans-serif; */
   padding: 0;
   /* background-color: var(--backgroundMain); */
   background-color: rgba(0, 0, 0, 0.8);
@@ -34,10 +34,12 @@ h3 {
 }
 
 button {
-  color: var(--buttoncontent);
+  /* color: var(--buttoncontent); */
+  color: white;
   border-radius: 10px;
   box-shadow: var(--boxShadow);
-  background-color: var(--Colorbutton);
+  /* background-color: var(--Colorbutton); */
+  background-color: #193a5a;
   padding: 1rem;
   border: none;
   text-transform: uppercase;
@@ -48,8 +50,9 @@ button {
 }
 
 button:hover {
-  color: #00ff88;
-  background-color: rgba(0, 0, 0, 0.363);
+/*   color: #00ff88;
+  background-color: rgba(0, 0, 0, 0.363); */
+  background-color: #25476A;
 }
 
 input[type="text"],

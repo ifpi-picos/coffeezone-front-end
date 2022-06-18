@@ -18,6 +18,15 @@ p{
     background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
     border-radius: 0 30px 30px 0;
+    box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.63);
+}
+
+.barMenu{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .icon{
@@ -25,8 +34,43 @@ p{
     margin-left: 14px;
 }
 
-a + a{
-    margin-top: .5rem;
+.iconProfile{
+    cursor: pointer;
+}
+
+.previewProfile{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 4.25rem;
+    top: 1.4rem;
+    padding: .5rem; 
+    width: 9.5rem;
+    height: 12rem;
+}
+
+.img{
+    background-image: url('../img/.jpg');
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1rem;
+    background-image: url(../img/profile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.iconSettings{
+    position: absolute;
+    bottom: calc(1rem + 25px);
+    left: 0;
+}
+
+.iconBack{
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .right{
@@ -46,8 +90,8 @@ a + a{
     display: flex;
     /*     align-items: center; */
     /* flex-grow: 1; */
-    gap: 2rem;
-    justify-content: space-evenly;
+    gap: 5rem;
+    justify-content: center;
 }
 
 .occupation{
@@ -67,6 +111,7 @@ a + a{
 #currentTime{
     margin: auto;
     padding: 1rem;
+    background-color: hsla(0, 0%, 0%, 0.502);
     background-color: rgba(0,0,0,0.5);
     border-radius: 10px;
     box-shadow: 0 0px 2px 5px rgba(0,0,0,0.2);
@@ -111,32 +156,46 @@ a + a{
     padding: 0.75rem;
 }
 
-/* .top{
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: space-between;
+textarea, select{
+    background-color: #333;
+    color: white;
 }
 
-.graphics, .reservations{
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 75%;
     display: flex;
+    gap: 1rem;
+    padding: .5rem;
+    background-color: #242424;
+    justify-content: center;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 5px 3px 4px rgb(0 0 0 / 63%);
+}
+
+.modalProfile{
+    background-color: #242424;
     padding: 1rem;
+    z-index: 2;
+    position: absolute;
 
-    border: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-.graphics{
-    width: 20%;
+    left: 4.25rem;
+    top: 6.2rem;
+    width: 18rem;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    gap: .75rem;
+    gap: 1rem;
+
+    word-wrap: break-word;
 }
 
-.graphics h1{
-    font-size: 4rem;
+.infos{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
 
-.reservations{
-    width: 80%;
-} */
+.hidden{
+    display: none;
+}
