@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/settings.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left"> 
+          <div class="dataPerson">
+            <div class="imgProfile"></div>
+            <p>Nome: Italo Paixão Gomes</p>
+            <p>Email: email4@email.com</p>
+            <p>Tipo: Coordenador</p>
+            <p>Função: front end</p>
+            <a href="#">LinkedIn</a>
+            <p>Id do cartão: 1234567891</p>
+          </div>
+          <nav>
+            <a href="/dashboard.html" class="iconBack">
+              <img src="img/home.png" class="icon">
+            </a>
+            <a href="/settings.html" class="iconSettings">
+              <img src="img/setting-config.png" class="icon">
+            </a>
+            <a href="/authorizations.html" class="iconRequest">
+              <img src="img/request.png" class="icon">
+            </a>
+            <a href="/" class="iconBack">
+              <img src="img/back.png" class="icon">
+            </a>
+          </nav>
+        </div>
+        <main>
+          
+             <!--{
+                "id": 2,
+                "cardid": null,
+                "name": "Italo Paixão Gomes",
+                "email": "email1@email.com",
+                "occupation": "front end",
+                "type": "Coordinator",
+                "linkedin": null,
+                "profileimage": null,
+                "preferences": {
+                  "sendActionRegEmail": true
+                }
+              }
+           -->
+
+           <!-- 
+             alterar 
+              nome
+              email
+              ocupação
+              linkedin
+
+              enviar email
+
+              deletar conta
+            -->
+            <section class="sectionForm">
+              <h1>Alterar informações</h1>
+              <form>
+                <div class="divName">
+                  <input type="text" class="siginInputText" placeholder="Nome">
+                </div>
+                <div class="divEmail">
+                  <input type="email" class="siginInputText" placeholder="E-mail">
+                </div>
+                <div class="divPassword">
+                  <input type="password" class="siginInputText" placeholder="Senha">
+                </div>
+                <div class="divConfirmPassword">
+                  <input type="password" class="siginInputText" placeholder="Confirmar senha">
+                </div>
+                <div class="divOccupation">
+                  <input type="text" class="siginInputText" placeholder="Função">
+                </div>
+                <div class="divCheckbox">
+                  <input type="checkbox" id="scales" name="scales">
+                  <label for="scales">Receber e-mails ao entrar ou sair da sala</label>
+                </div>
+                <button>Alterar dados</button>
+              </form>
+            </section>
+            <div class="or">
+              <div class="line"></div>
+              <p>OU</p>
+              <div class="line"></div>
+            </div>
+            <button>Deletar conta</button>
+        </main>
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+.container{
+  overflow: hidden;
+  color: white;
+}
+
+a{
+  color: white;
+}
+
+p, a, label{
+  font-size: 1.2rem;
+}
+
+.left{
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  width: 20rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  padding: 2rem 1rem; 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+} 
+
+.dataPerson{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.imgProfile{
+  width: 75px;
+  height: 75px;
+  background-image: url("../img/profile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+nav{
+  display: flex;
+  justify-content: space-evenly;
+
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.icon{
+  width: 40px;
+  margin: 0 auto;
+}
+
+
+main{
+  min-height: 100vh;
+  width: calc(100vw - 20rem);
+  margin-left: 20rem;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sectionForm{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+.sectionForm h1{
+  font-size: 2rem;
+  text-align: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+input{
+  width: 100%;
+}
+
+.divCheckbox{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.divCheckbox input{
+  width: auto;
+}
+
+button{
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.or{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.line{
+  background-color: white;
+  height: 1px;
+  width: 150px;
+}
