@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="styles/dashboard.css">
 </head>
 <body>
+    <script src="scripts/verifyLogin.js"></script>
     <div class="container">
         <div class="left">
             <div class="barMenu">
                 <div class="iconProfile">
-                    <img src="img/profile.png" class="icon">
+                   <img src="img/icons8-usuário-50.png" alt="">
                 </div>
                 <div class="previewProfile">
-                    <div class="img"></div>
+                    <img src="img/icons8-usuário-50.png" alt="">
                     <p>Nome: itlao paixap gomes</p>
                 </div>
                 <!-- <a href="dashboard.html" class="iconDashboard">
@@ -25,8 +26,8 @@
                 <!-- <a href="settings.html" class="iconSettings">
                     <img src="img/setting-config.png" class="icon">
                 </a> -->
-                <a href="/" class="iconBack">
-                    <img src="img/back.png" class="icon">
+                <a href="index.html" class="iconBack">
+                    <img src="img/icons8-retornar-50.png" class="icon">
                 </a>
             </div>
         </div>
@@ -44,7 +45,7 @@
                     <div class="reservationsSide">
                         <div class="reservationTime">
                             <h2>Reserva de horário</h2>
-                            <select name="selectTimeEntry">
+                            <select name="selectTimeEntry" class="tmselect">
                                 <!-- 7 -> 11 e 14 -> 20 -->
                                 <option selected disabled>Selecione um horário de entrada</option>
                                 <option value="7">7h</option>
@@ -53,7 +54,7 @@
                                 <option value="10">10h</option>
                                 <option value="11">11h</option>
                             </select>
-                            <select name="selectTimeExit">
+                            <select name="selectTimeExit" class="tmselect">
                                 <!-- 8 -> 12 e 13 -> 21 -->
                                 <option selected disabled>Selecione um horário de saída</option>
                                 <option value="8">8h</option>
@@ -65,13 +66,13 @@
                         </div>
                         <div class="reservationMaterial">
                              <h2>Reserva de material</h2>
-                             <select name="selectMaterial">
+                             <select name="selectMaterial" class="tmselect">
                                  <option selected disabled>Selecione o material:</option>
                                  <option value="headset">Headset</option>
                                  <option value="caboVGA">Cabo VGA</option>
                                  <option value="teclado">Teclado</option>
                              </select>
-                             <select name="selectDateDevolution">
+                             <select name="selectDateDevolution" class="tmselect">
                                  <option selected disabled>Selecione uma data de entrega:</option>
                                  <option value="14/06">14/06</option>
                                  <option value="15/06">15/06</option>
@@ -100,7 +101,7 @@
             </footer> -->
         </div>
         <div class="modalProfile hidden">
-            <div class="img"></div>
+            <img src="img/icons8-usuário-50.png" class="img3" alt="">
             <div class="infos">
                 <p>Nome: Italo paixão gomes</p>
                 <p>Email: italopax80@gdawdadadawwdmail.com</p>

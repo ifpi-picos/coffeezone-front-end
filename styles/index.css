@@ -9,7 +9,7 @@ body *{
 .main-home{
     height: 100vh;
     width: 100vw;
-    background-color: rgba(30, 14, 44, 0.849);
+    /* background-color: rgba(30, 14, 44, 0.849); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,6 @@ body *{
     /* color: #00ff88;  */
 }
 .left-home > h2{
-    color: #00ff88;
     padding-left: 1rem;
     text-align: center;
 } 
@@ -51,7 +50,6 @@ body *{
     flex-direction: column;
     align-items: center;
     padding: 30px 35px;
-    background-color: #2f2841;
     border-radius: 20px;
     box-shadow: 0px 10px 40px #00000056;
     box-sizing: border-box;
@@ -59,47 +57,21 @@ body *{
 .btn-enter{
     width: 100%;
     box-shadow: 0px 0px 15px -5px #000000;
-    /* padding: 16px 0px;
-    margin: 25px;
-    border: none;
-    border-radius:8px;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 3px;
-    background-color: #00ff88;
-    cursor: pointer;
-    box-shadow: 0px 0px 7px -12px #71c89e; */
+
 }
 .btn-register{
-    /* width: 100%;
-    padding: 16px 0px;
-    margin: 25px;
-    border: none;
-    border-radius:8px;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 3px;
-    background-color: #2f2841;
-    cursor: pointer;
-    box-shadow: 0px 0px 15px -12px #71c89e;
-    color: #00ff88;
-    border: 1px solid #000; */
-
     width: 100%;
-    background-color: #2f2841;
-    color: #00ff88;
+    background-color: var(--button);
     border: 1px solid #2f2841;
     padding-left: 2rem;
     padding-right: 2rem;
-    box-shadow: 0px 0px 7px #17171adc;
-    
+    box-shadow: 0px 0px 7px #17171adc; 
 }
 button{
     transition: 400ms;
 }
 button:hover{
     color: #00ff88;
-    background-color: rgba(0, 0, 0, 0.363);
 }
 @media only screen and (max-width:950px) {
     .card-home{

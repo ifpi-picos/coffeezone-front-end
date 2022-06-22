@@ -4,7 +4,7 @@
 }
 
 a{
-  color: white;
+  color: #fd189d;
 }
 
 p, a, label{
@@ -53,6 +53,9 @@ nav{
 .icon{
   width: 40px;
   margin: 0 auto;
+}
+.iconconfig{
+  width: 50px;
 }
 
 

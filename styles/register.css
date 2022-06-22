@@ -44,7 +44,7 @@ img{
 }
 
 .registerBox{
-  background-color: var(--ColorBoxshadow);
+  box-shadow: 0px 10px 40px #00000056;
   padding: 2rem;
   display: flex;
   flex-direction: column;

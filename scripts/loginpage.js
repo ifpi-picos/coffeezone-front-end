@@ -36,7 +36,7 @@ constValidateEmail.addEventListener("input", ({ target }) => {
 
 function putBorder(condition, element) {
   condition
-    ? (element.style.border = "2px solid var(--ColorText)")
+    ? (element.style.border = "2px solid var(--ver)")
     : (element.style.border = "2px solid red");
 }
 const inputOccupation = document.querySelector(
@@ -64,7 +64,9 @@ function eyeClick() {
 }
 function showPassword() {
   passwordinput.setAttribute("type", "text")
+  eyeSvg.setAttribute("src", "img/close.png")
 }
 function hidePassword() {
   passwordinput.setAttribute("type", "password");
+  eyeSvg.setAttribute("src", "img/open.png")
 }

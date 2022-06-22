@@ -11,11 +11,18 @@ body {
 /*   font-family: "Noto Sans", sans-serif; */
   padding: 0;
   /* background-color: var(--backgroundMain); */
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--background);
+  
 }
 
 :root {
-  --ColorText: #00ff88;
+      
+    --background:#000000cc;
+    --input:#665f7584;
+    --button:#c42d85;
+    --buttohover:#fd189d;
+    --ver:#fd189d;
+     /*  
   --Colorbutton: #00ff88;
   --colorbackgroundcolor: #1e0e2cd0;
   --ColorBoxshadow: #2f2841;
@@ -23,23 +30,22 @@ body {
   --buttoncontent: #000;
   --backgroundMain: #40324c;
   --boxShadow: 0px 0px 7px #2f2841;
-  --colorMensageError: rgb(255, 46, 46);
+  --colorMensageError: rgb(255, 46, 46); */
 }
 
 h1,
 h2,
 h3 {
-  color: white;
+  color: #ffffff;
   font-weight: 700;
 }
 
 button {
-  /* color: var(--buttoncontent); */
-  color: white;
+
+  color: #ffffff;
   border-radius: 10px;
   box-shadow: var(--boxShadow);
-  /* background-color: var(--Colorbutton); */
-  background-color: #193a5a;
+  background-color: var(--button);
   padding: 1rem;
   border: none;
   text-transform: uppercase;
@@ -50,9 +56,8 @@ button {
 }
 
 button:hover {
-/*   color: #00ff88;
-  background-color: rgba(0, 0, 0, 0.363); */
-  background-color: #25476A;
+  background-color: var(--buttohover);
+  
 }
 
 input[type="text"],
@@ -63,7 +68,7 @@ input[type="password"] {
   border-radius: 10px;
   padding: 15px;
   background-color: var(--BackgroundColorInput);
-  background-color: #514869;
+  background-color: var(--input);
   color: #ffffff;
   font-size: 12pt;
   box-shadow: var(--boxShadow);
@@ -75,7 +80,7 @@ input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="number"]::placeholder,
 input[type="password"]::placeholder {
-  color: rgb(142, 152, 161);
+  color: #8e98a1;
 }
 
 input[type=number]::-webkit-inner-spin-button { 
