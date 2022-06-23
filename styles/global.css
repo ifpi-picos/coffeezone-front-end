@@ -125,3 +125,9 @@ h2.mensageError{
 .mensageSucess{
   color: var(--ColorText);
 } 
+.link{
+  color: var(--ver);
+}
+.p_link{
+  color: #ffffff;
+}
