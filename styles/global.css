@@ -129,6 +129,12 @@ h2.mensageError{
   color: var(--ColorText);
 } 
 
+.link{
+  color: var(--ver);
+}
+.p_link{
+  color: #ffffff;
+}
 
 .menuHamburguer{
   display: none;

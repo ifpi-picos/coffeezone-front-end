@@ -64,9 +64,9 @@ function eyeClick() {
 }
 function showPassword() {
   passwordinput.setAttribute("type", "text")
-  eyeSvg.setAttribute("src", "img/close.png")
+  eyeSvg.setAttribute("src", "img/open.png")
 }
 function hidePassword() {
   passwordinput.setAttribute("type", "password");
-  eyeSvg.setAttribute("src", "img/open.png")
+  eyeSvg.setAttribute("src", "img/close.png")
 }
