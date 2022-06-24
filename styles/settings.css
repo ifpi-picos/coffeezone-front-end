@@ -11,7 +11,7 @@ p, a, label{
   font-size: 1.2rem;
 }
 
-.left{
+/* .left{
   background-color: rgba(0, 0, 0, 0.2);
   height: 100vh;
   width: 20rem;
@@ -48,7 +48,7 @@ nav{
 
   gap: 1rem;
   flex-wrap: wrap;
-}
+} */
 
 .icon{
   width: 40px;
@@ -61,8 +61,8 @@ nav{
 
 main{
   min-height: 100vh;
-  width: calc(100vw - 20rem);
-  margin-left: 20rem;
+  width: calc(100vw - var(--widthBarMenu));
+  margin-left: var(--widthBarMenu);
   padding: 2rem;
 
   display: flex;
@@ -123,4 +123,12 @@ button{
   background-color: white;
   height: 1px;
   width: 150px;
+}
+
+@media (max-width: 400px){
+
+  main{
+    padding: 4rem 2rem 2rem;
+  }
+
 }

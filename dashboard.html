@@ -11,7 +11,35 @@
 <body>
     <script src="scripts/verifyLogin.js"></script>
     <div class="container">
-        <div class="left">
+        <div class="menuHamburguer">
+            <img src="img/menuHamburguer.png" alt="">
+          </div>
+          <div class="leftSide"> 
+            <div class="dataPerson">
+              <div class="imgProfile"></div>
+              <p>Nome: Italo Paixão Gomes</p>
+              <p>Email: email4@email.com</p>
+              <p>Tipo: Coordenador</p>
+              <p>Função: front end</p>
+              <a href="#">LinkedIn</a>
+              <p>Id do cartão: 1234567891</p>
+            </div>
+            <nav>
+              <a href="/dashboard.html" class="iconBack">
+                <img src="img/home.png" class="icon">
+              </a>
+              <a href="/settings.html" class="iconSettings">
+                <img src="img/setting-config.png" class="icon">
+              </a>
+              <a href="/authorizations.html" class="iconRequest">
+                <img src="img/request.png" class="icon">
+              </a>
+              <a href="/" class="iconBack">
+                <img src="img/back.png" class="icon">
+              </a>
+            </nav>
+          </div>
+       <!--  <div class="left">
             <div class="barMenu">
                 <div class="iconProfile">
                    <img src="img/icons8-usuário-50.png" alt="">
@@ -20,18 +48,21 @@
                     <img src="img/icons8-usuário-50.png" alt="">
                     <p>Nome: itlao paixap gomes</p>
                 </div>
-                <!-- <a href="dashboard.html" class="iconDashboard">
+                
+                <a href="dashboard.html" class="iconDashboard">
                     <img src="img/home.png" class="icon">
-                </a> -->
-                <!-- <a href="settings.html" class="iconSettings">
+                </a>
+                <a href="settings.html" class="iconSettings">
                     <img src="img/setting-config.png" class="icon">
-                </a> -->
+                </a>
+
                 <a href="index.html" class="iconBack">
                     <img src="img/icons8-retornar-50.png" class="icon">
                 </a>
             </div>
-        </div>
-        <div class="right">
+        </div> -->
+
+        <main>
             <h1>Mambee, frábrica escola de software</h1>
             <div class="bottom">
                 <div class="occupation">
@@ -99,8 +130,8 @@
                     <img src="img/instagram.png" class="icon">
                 </a>
             </footer> -->
-        </div>
-        <div class="modalProfile hidden">
+        </main>
+        <!-- <div class="modalProfile hidden">
             <img src="img/icons8-usuário-50.png" class="img3" alt="">
             <div class="infos">
                 <p>Nome: Italo paixão gomes</p>
@@ -109,9 +140,10 @@
                 <p>Tipo de usuário: visitante</p>
             </div>
             <button>Alterar informações</button>
-        </div>
+        </div> -->
     </div>
 
+    <script src="scripts/mobileMenu.js"></script>
     <script src="scripts/dashboard.js"></script>
 </body>
 </html>
