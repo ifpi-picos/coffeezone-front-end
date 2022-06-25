@@ -91,12 +91,12 @@ div.inputRadio + div.inputRadio{
   width: .8rem;
   height: .8rem;
   background-color: transparent;
-  border: 2px solid var(--ColorText);
+  border: 2px solid var(--button);
   border-radius: 500%;
 }
 
 .signinInputRadio:checked{
-  background-color: var(--ColorText);
+  background-color: var(--button);
 }
 
 input[placeholder="ID do cartão"]{

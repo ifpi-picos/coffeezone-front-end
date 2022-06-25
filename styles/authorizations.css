@@ -3,9 +3,9 @@
   color: white;
 }
 
-a{
+/* a{
   color: white;
-}
+} */
 
 p, a{
   font-size: 1.2rem;
@@ -85,6 +85,7 @@ main h1{
 
 .requestBottom{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
 } 
@@ -97,7 +98,15 @@ main h1{
 
 .buttons{
   display: flex;
-  flex-direction: column;
   gap: 0.5rem;
   margin: auto 0;
+
+}
+
+.buttons button{
+  width: 50%;
+}
+
+.denied{
+  background-color: var(--buttonDenied);
 }

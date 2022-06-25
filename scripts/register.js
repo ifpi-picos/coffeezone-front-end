@@ -62,7 +62,7 @@ async function requisition (obj){
 }
 
 function putBorder (condition, element) {
-  condition ? element.style.border = '2px solid var(--ColorText)' : element.style.border = '2px solid var(--colorMensageError)';
+  condition ? element.style.border = '2px solid var(--button)' : element.style.border = '2px solid var(--colorMensageError)';
 }
 
 const url = 'https://coffeezone-backend.herokuapp.com/user/';

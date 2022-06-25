@@ -23,6 +23,8 @@ body {
     --buttohover:#fd189d;
     --ver:#fd189d;
     --leftBar: rgba(41, 41, 41);
+    --buttonDenied: rgb(202, 0, 0);
+
      /*  
   --Colorbutton: #00ff88;
   --colorbackgroundcolor: #1e0e2cd0;
@@ -41,6 +43,14 @@ h2,
 h3 {
   color: #ffffff;
   font-weight: 700;
+}
+
+p, a, label{
+  font-size: 1.2rem;
+}
+
+a{
+  color: #fd189d;
 }
 
 button {
@@ -168,10 +178,10 @@ h2.mensageError{
 .imgProfile{
   width: 100px;
   height: 100px;
-  background-image: url("../img/profile.png");
+  background-image: url("../img/icons8-usuário-50.png");
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   margin: 0 auto;
 }
 
@@ -180,6 +190,7 @@ nav{
   justify-content: space-evenly;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .leftSide.leftSideMenuOpen{
@@ -204,6 +215,10 @@ nav{
 .icon{
   width: 40px;
   margin: 0 auto;
+}
+
+.iconconfig{
+  width: 50px;
 }
 
 @media (max-width: 1000px) {
