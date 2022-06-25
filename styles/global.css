@@ -23,7 +23,8 @@ body {
     --buttohover:#fd189d;
     --ver:#fd189d;
     --leftBar: rgba(41, 41, 41);
-    --buttonDenied: rgb(202, 0, 0);
+    --buttonDenied: #930c0c;
+    --buttonhovernot:#bd0404;
 
      /*  
   --Colorbutton: #00ff88;

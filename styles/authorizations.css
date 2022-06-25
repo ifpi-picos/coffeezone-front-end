@@ -85,7 +85,7 @@ main h1{
 
 .requestBottom{
   display: flex;
-  flex-direction: column;
+/*   flex-direction: column; */
   justify-content: space-between;
   gap: 2rem;
 } 
@@ -98,15 +98,68 @@ main h1{
 
 .buttons{
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
   margin: auto 0;
-
 }
 
-.buttons button{
+/* .buttons button{
   width: 50%;
+} */
+
+/* 
+.requestBottom{
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+} 
+
+.dataRequest{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: auto 0;
+}
+*/
 
 .denied{
   background-color: var(--buttonDenied);
+}
+
+.denied:hover{
+  background-color: var(--buttonhovernot);
+}
+.request{
+  /* border: 1px solid rgb(255, 0, 153) ; */
+}
+
+@media (max-width: 840px){
+
+  .requestBottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+  } 
+  
+  .dataRequest{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  
+  .buttons{
+    flex-direction: row;
+  }
+  
+  .buttons button{
+    width: 50%;
+  }
+
 }

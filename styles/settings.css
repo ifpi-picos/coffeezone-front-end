@@ -113,6 +113,13 @@ button{
   justify-content: center;
   align-self: center;
 }
+.Deletar{
+  background-color: var(--buttonDenied);
+  max-width: calc(500px - 6rem);
+}
+.Deletar:hover{
+  background-color: var(--buttonhovernot);
+}
 
 .or{
   display: flex;
@@ -124,6 +131,11 @@ button{
   background-color: white;
   height: 1px;
   width: 150px;
+}
+.sectionForm{
+  box-shadow: 0px 10px 40px #00000056;
+  padding: 3rem;
+  border-radius: 20px;
 }
 
 @media (max-width: 400px){
