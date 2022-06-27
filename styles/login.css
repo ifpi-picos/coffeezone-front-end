@@ -102,6 +102,12 @@ body *{
 	.card-login{
 		width: 90%;
 	}
+	.left-login-img{
+		display: none;
+	}
+	.left-login{
+		display: none;
+	}
 	
 }
 #msgError{

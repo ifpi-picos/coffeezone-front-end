@@ -111,6 +111,9 @@ input[type="radio"], label{
   color: white;
   font-weight: 900;
 } */
+.leftRegisterImg{
+  display: none;
+}
 
 @media (min-width: 750px) {
 
@@ -141,6 +144,9 @@ input[type="radio"], label{
 
   .leftRegister{
     max-width: 50%;
+  }
+  .leftRegisterImg{
+    display: block;
   }
 
 }
