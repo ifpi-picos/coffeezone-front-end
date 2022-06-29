@@ -21,18 +21,27 @@ main{
     align-items: center;
     gap: 2rem;
 }
+.tabelageral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    height: 25vw;
+    width: 70vh;
+    background-color: rgba(0, 0, 0, 0.2);
 
+}
 
-
-  .bottom{
+/*   .bottom{
       width: 100%;
     display: flex;
   
     gap: 5rem;
     justify-content: center;
-}
+} */
 
-.occupation{
+.occupation{    
+    width: 50vh;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -55,16 +64,16 @@ main{
     box-shadow: 0 0px 2px 5px rgba(0,0,0,0.2);
 }
 
-.reservations{
+/* .reservations{
     background-color: rgba(0, 0, 0, 0.2);
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-}
+} */
 
-.reservationsSide{
+/* .reservationsSide{
     display: flex;
     gap: 2rem;
 }
@@ -74,9 +83,9 @@ main{
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-}
+} */
 
-.reservations select{
+/* .reservations select{
     width: 100%;
 }
 
@@ -92,9 +101,9 @@ main{
     width: 100%;
     min-height: 6rem;
     padding: 0.75rem;
-}
+} */
 
-select{
+/* select{
     border: 1px solid #000000 ;
 }
 textarea{
@@ -104,9 +113,9 @@ textarea{
 textarea, select{
     background-color: #333;
     color: white;
-}
+} */
 
-footer{
+/* footer{
     position: absolute;
     bottom: 0;
     width: 75%;
@@ -117,8 +126,8 @@ footer{
     justify-content: center;
     border-radius: 20px 20px 0 0;
     box-shadow: 5px 3px 4px rgb(0 0 0 / 63%);
-}
-
+} */
+/* 
 .modalProfile{
     background-color: #242424;
     padding: 1rem;
@@ -146,8 +155,8 @@ footer{
 }
 .tmselect{
     height: 1.9rem;
-}
-option{
+} */
+/* option{
     color: var(--button);
     font-size: 1.2rem;
 }
@@ -157,7 +166,7 @@ select{
 select:hover{
     color: var(--buttohover); 
 }
-
+ */
 @media (max-width: 1350px){
 
     .bottom{
