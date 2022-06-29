@@ -10,35 +10,41 @@
 </head>
 <body>
     <script src="scripts/verifyLogin.js"></script>
-    
     <div class="container">
         <div class="menuHamburguer">
             <img src="img/menuHamburguer.png" alt="">
-        </div>
-        <div class="leftSide"> 
+          </div>
+          <div class="leftSide"> 
             <div class="dataPerson">
-                <div class="imgProfile"></div>
+              <div class="imgProfile"></div>
+              <p>Nome: Italo Paixão Gomes</p>
+              <p>Email: email4@email.com</p>
+              <p>Tipo: Coordenador</p>
+              <p>Função: front end</p>
+              <a href="#">LinkedIn</a>
+              <p>Id do cartão: 1234567891</p>
             </div>
             <nav>
                 <a href="/dashboard" class="iconBack">
-                    <img src="img/home.png" class="icon">
+                  <img src="img/home.png" class="icon">
                 </a>
                 <a href="/authorizations" class="iconRequest">
-                    <img src="img/request.png" class="icon">
+                  <img src="img/request.png" class="icon">
                 </a>
                 <a href="/" class="iconBack">
-                    <img src="img/icons8-retornar-50.png" class="icon">
+                  <img src="img/icons8-retornar-50.png" class="icon">
                 </a>
                 <a href="/settings" class="iconSettings">
-                    <img src="img/setting-config.png" class="iconconfig">
+                  <img src="img/setting-config.png" class="iconconfig">
                 </a>
             </nav>
-        </div>
+          </div>
+ 
         <main>
             <h1>Mambee, fábrica escola de software</h1>
             <div class="bottom">
                 <div class="occupation">
-                    <h2>Ocupação:</h2>
+                    <h2>Atividades:</h2>
                     <h1>17/30</h1>
                     <h2>Vagas disponíveis:</h2>
                     <h2>13/30</h2>
@@ -49,6 +55,7 @@
                         <div class="reservationTime">
                             <h2>Reserva de horário</h2>
                             <select name="selectTimeEntry" class="tmselect">
+                                <!-- 7 -> 11 e 14 -> 20 -->
                                 <option selected disabled>Selecione um horário de entrada</option>
                                 <option value="7">7h</option>
                                 <option value="8">8h</option>
@@ -57,6 +64,7 @@
                                 <option value="11">11h</option>
                             </select>
                             <select name="selectTimeExit" class="tmselect">
+                                <!-- 8 -> 12 e 13 -> 21 -->
                                 <option selected disabled>Selecione um horário de saída</option>
                                 <option value="8">8h</option>
                                 <option value="9">9h</option>
@@ -89,10 +97,11 @@
                     <button>Realizar reserva</button>
                 </div>
             </div>
+          
         </main>
+       
     </div>
 
-    <script src="scripts/pullInfosProfile.js"></script>
     <script src="scripts/mobileMenu.js"></script>
     <script src="scripts/dashboard.js"></script>
 </body>
