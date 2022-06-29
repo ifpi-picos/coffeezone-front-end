@@ -26,7 +26,7 @@ main{
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    height: 25vw;
+    height: 400px;
     width: 70vh;
     background-color: rgba(0, 0, 0, 0.2);
 
@@ -63,7 +63,38 @@ main{
     border-radius: 10px;
     box-shadow: 0 0px 2px 5px rgba(0,0,0,0.2);
 }
-
+.tabelas{
+    display: flex;
+    gap: 1rem;
+}
+@media only screen and (max-width:1520px){
+    .tabelas{
+        flex-direction: column;
+    }
+    .occupation{
+        width: 70vh;
+    }
+}
+@media only screen and (max-width: 932px){
+    .leftSide{
+        display: none;
+    } 
+    main{
+        margin: 0 auto;
+    }
+    .menuHamburguer{
+        display: block;
+        position: fixed;
+        top: 1rem;
+        right: 1rem; 
+        z-index: 2;
+        cursor: pointer;
+      }
+    
+}
+@media only screen and() {
+    
+}
 /* .reservations{
     background-color: rgba(0, 0, 0, 0.2);
     padding: 2rem;
@@ -167,26 +198,3 @@ select:hover{
     color: var(--buttohover); 
 }
  */
-@media (max-width: 1350px){
-
-    .bottom{
-      flex-direction: column;
-    }
-  
-}
-
-@media (max-width: 700px){
-
-    .bottom{
-      flex-direction: column;
-    }
-
-    main{
-        padding: 4rem 2rem;
-    }
-
-    .reservationsSide{
-        flex-direction: column;
-    }
-  
-}
