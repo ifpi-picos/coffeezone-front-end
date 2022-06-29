@@ -14,3 +14,4 @@ menu.addEventListener('click', ()=>{
   imgProfile.classList.toggle('imgProfileMenuOpen')
   nav.classList.toggle('navMenuOpen')
 })
+
