@@ -6,8 +6,8 @@ function validateEmail(email) {
   return false;
 }
 
-function validateNewEmail(email) {
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+function validateNewPassword(password) {
+  if (password.length >= 8){
     newEmailValided = true
     return true;
   } 
@@ -54,11 +54,13 @@ function requisitionSendNewPassword (code, object) {
       'Content-Type': 'application/json'
     },
     body: object
-  }).then((res)=>{
-    console.log(res)  
+  }).then((res)=>{ 
     return res.json()
   }).then(json=>{
     buttonSendEmail.insertAdjacentHTML('afterend', `<p>Nome: ${json.sucess}</p>`)
+    setTimeout(()=>{
+      window.location.pathname = '/login';
+    }, 3000)
   })
 }
 
@@ -77,8 +79,8 @@ function verifyLoadWithParams () {
     sendNewPassword.style.display = 'block'
 
     inputNewPassword.addEventListener('input', ({target}) => {
-      let email = target.value;  
-      putBorder(validateNewEmail(email), target);
+      let password = target.value;  
+      putBorder(validateNewPassword(password), target);
       if(target.value.length == 0) target.style.border = "none";
     })
 

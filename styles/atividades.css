@@ -89,7 +89,15 @@ main{
         right: 1rem; 
         z-index: 2;
         cursor: pointer;
-      }
+    }
+    .tabelas{
+        align-items: center;
+        width: 100%;
+    }  
+    .tabelageral, .occupation{
+        width: 80vw;
+    }
+    
     
 }
 @media only screen and() {
