@@ -1,24 +1,43 @@
 function entrar() {
-  const usuario = document.getElementById("usuario").value;
-  const senha = document.getElementById("Senha").value;
-  let data = {
-    email: usuario,
-    password: senha,
-  };
-  fetch("https://coffeezone-backend.herokuapp.com/auth/login", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: { "Content-type": "application/json; charset=UTF-8" },
+  const mensagesError = document.querySelectorAll('.mensageError');
+  mensagesError.forEach((p)=>{
+    p.parentNode.removeChild(p);
   })
-    .then((response) => {
-      response.json().then((json) => {
-        if (json.token) {
-          localStorage.setItem("token", json.token);
-          window.location.href = "dashboard"
-        }
-      });
+
+  const usuario = document.getElementById("usuario")
+  const senha = document.getElementById("Senha")
+  let problem = false;
+
+  if(!ValidateEmail(usuario.value)){
+    usuario.insertAdjacentHTML('afterend', '<p class="mensageError">Preencha o email corretamente</p>');
+    problem = true;
+  }
+
+  if(senha.value.length < 8){
+    senha.insertAdjacentHTML('afterend', '<p class="mensageError">Preencha a senha corretamente</p>');
+    problem = true;
+  }
+
+  if(!problem){
+    let data = {
+    email: usuario.value,
+    password: senha.value,
+    };
+    fetch("https://coffeezone-backend.herokuapp.com/auth/login", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
     })
-    .catch((err) => console.log(err));
+      .then((response) => {
+        response.json().then((json) => {
+          if (json.token) {
+            localStorage.setItem("token", json.token);
+            window.location.href = "dashboard"
+          }
+        });
+      })
+      .catch((err) => console.log(err));
+  }
 }
 
 function ValidateEmail(email) {
@@ -30,7 +49,7 @@ const constValidateEmail = document.querySelector(
   'input[type="text"][placeholder="E-mail"]'
 );
 
-constValidateEmail.addEventListener("input", ({ target }) => {
+constValidateEmail.addEventListener("input", ({ target }) => { 
   putBorder(ValidateEmail(target.value), target);
 });
 
@@ -46,8 +65,6 @@ const inputOccupation = document.querySelector(
 inputOccupation.addEventListener("input", ({ target }) => {
   putBorder(target.value.length > 7, target);
 });
-
-
 
 const passwordinput = document.getElementById("Senha");
 const eyeSvg = document.getElementById("eyeSvg");

@@ -122,7 +122,7 @@ input[type=number] {
 }
 
 .mensageError{
-  color: var(--colorMensageError);
+  color: var(--buttonhovernot);
   margin-left: .5rem;
   margin-top: .25rem;
 }
