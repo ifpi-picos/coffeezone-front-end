@@ -222,6 +222,10 @@ nav{
   width: 50px;
 }
 
+.iconRequest{
+  display: none;
+}
+
 @media (max-width: 1000px) {
   :root{
     --widthBarMenu: 15rem;
