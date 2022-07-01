@@ -1,3 +1,5 @@
+/* script para o funcionamento do menu mobile */
+
 const menu = document.querySelector('.menuHamburguer')
 const leftSide = document.querySelector('.leftSide')
 const imgProfile = document.querySelector('.imgProfile')
@@ -10,6 +12,7 @@ menu.addEventListener('click', ()=>{
   } else{
     imageMenu.setAttribute('src', 'img/menuHamburguer.png')
   }
+  /* .toogle() verifica se há aquela classe, se sim ela é retirada, senão ela é adicionada */
   leftSide.classList.toggle('leftSideMenuOpen')
   imgProfile.classList.toggle('imgProfileMenuOpen')
   nav.classList.toggle('navMenuOpen')

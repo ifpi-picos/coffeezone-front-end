@@ -1,5 +1,9 @@
+/* script para inserir as requisições realizadas para o coordenador na tela de autorizações */
+
 function insertRequests (arrayRequests) {
+  /* percorre o array de resposta do fetch */
   arrayRequests.forEach((req)=>{
+    /* para cada item do array, é criada uma div com suas informações e inserida no final da div requests */
     requestsDiv.insertAdjacentHTML('beforeend', `
     <div class="request">
       <div class="requestTop">

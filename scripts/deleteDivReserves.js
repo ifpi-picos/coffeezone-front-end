@@ -1,3 +1,8 @@
+/* verifica se o individuo é ou não um coordenador, se sim a div responsável pelas reservas é retirada
+
+variável requestOptions já foi declarada em um script que foi importado anteriormente no mesmo arquivo html
+*/
+
 function deleteContentDiv(div){
   div.innerText = ''
 }

@@ -1,3 +1,4 @@
+/* recebe um email de parametro e valida se está de acordo com o regex, se estiver retorna true, senão retorna false */
 function ValidateEmail(email) {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) return true;
   return false;
