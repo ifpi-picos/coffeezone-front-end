@@ -1,0 +1,25 @@
+.wrapperInput{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.label{
+  color: #e1e1e6;
+  font-weight: bold;
+}
+
+.input{
+  padding: .75rem;
+  border-radius: .25rem;
+  background-color: #202024;
+  border: none;
+  color: #e1e1e6;
+  font-weight: bold;
+}
+
+.input::placeholder{
+  font-size: .75rem;
+  color: #7c7c8a;
+  font-weight: bold;
+}

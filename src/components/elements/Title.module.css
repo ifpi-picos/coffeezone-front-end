@@ -1,0 +1,15 @@
+.wrapperTitle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title{
+  color: #e1e1e6;
+}
+
+.subtitle{
+  color: #7c7c8a;
+  font-size: 1.125rem;
+  font-weight: 400;
+}

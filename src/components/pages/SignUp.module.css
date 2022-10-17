@@ -1,0 +1,23 @@
+.signUp{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.wrapperInputs{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.linkToSignIn{
+  font-size: 1rem;
+  color: #7c7c8a;
+  margin: auto;
+}

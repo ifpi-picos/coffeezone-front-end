@@ -1,0 +1,21 @@
+.wrapperSelect{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.label{
+  color: #e1e1e6;
+  font-weight: bold;
+}
+
+.select{
+  padding: .75rem;
+  font-size: .75rem;
+  border-radius: .25rem;
+  color: #7c7c8a;
+  background-color: #202024;
+  font-weight: bold;
+  border: none;
+  color: #e1e1e6;
+}
