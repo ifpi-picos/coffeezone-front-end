@@ -18,8 +18,18 @@
   font-weight: bold;
 }
 
+.input:focus{
+  border: none;
+  outline: none;
+}
+
 .input::placeholder{
   font-size: .75rem;
   color: #7c7c8a;
   font-weight: bold;
+}
+
+.error{
+  font-size: .75rem;
+  color: red;
 }
