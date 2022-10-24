@@ -8,16 +8,26 @@ import Select from "../../components/form/Select/Select";
 import { UserContext } from "../../store/UserContext";
 
 import useForm from "../../utils/useForm";
+import Modal from "../../components/elements/Modal/Modal";
 
 export default function SignUp(){
 
-  const {apiUrl, data, login, loading, error} = React.useContext(UserContext);
+  const {apiUrl, data, login, loading, setLoading, error} = React.useContext(UserContext);
 
   const name = useForm('name');
   const email = useForm('email');
   const password = useForm('password');
   const confirmPassword = useForm('password');
   const [typeUser, setTypeUser] = React.useState('Visitor');
+  const [modal, setModal] = React.useState(null);
+
+  React.useEffect(()=>{
+    if(modal){
+      setTimeout(()=>{
+        setModal(null);
+      }, 3000)
+    }
+  }, [modal])
 
   async function signUp(e){
     e.preventDefault();
@@ -27,7 +37,8 @@ export default function SignUp(){
     confirmPassword.validate()
     if(confirmPassword.value !== password.value) confirmPassword.setError('Esta senha está diferente da anterior.')
     try {
-      if(!validateName || !validateEmail || !validatePassword || password.value !== confirmPassword.value) throw new Error()
+      if(!validateName || !validateEmail || !validatePassword || password.value !== confirmPassword.value) throw new Error();
+      setLoading(true);
       let response = await fetch(`${apiUrl}/user`, {
         method: "POST",
         headers: {
@@ -40,11 +51,14 @@ export default function SignUp(){
           role: typeUser
         })
       })
-      if(!response.ok) throw new Error('Não foi possível cadastrar-se, tente novamente.')
       let json = await response.json()
-      console.log(json)
+      if(!response.ok) throw new Error(json)
+      setLoading(false); 
+      setModal(json);
+      console.log(modal)
     } catch (error) {
-      console.log('error: ', error.message)
+      setModal(error.message);
+      console.log(modal)
     }
   }
 
@@ -66,8 +80,9 @@ export default function SignUp(){
           </div>
           <Button>Cadastrar-se</Button>
         </form>
+        {modal ? <Modal>{modal}</Modal> : null}
       </div>
-      <Link className={styles.linkToSignIn} to="/signin">Já possui uma conta?</Link>
+      <Link className={styles.linkToSignIn} to="/login">Já possui uma conta?</Link>
     </div>
   )
 }
