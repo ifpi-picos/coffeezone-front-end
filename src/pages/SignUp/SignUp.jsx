@@ -57,6 +57,7 @@ export default function SignUp(){
       setModal(json);
       console.log(modal)
     } catch (error) {
+      setLoading(false); 
       setModal(error.message);
       console.log(modal)
     }

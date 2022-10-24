@@ -7,7 +7,7 @@ export default function Button({children}){
   const {loading} = React.useContext(UserContext);
 
   if(loading){
-    return <button className={`${styles.button}`}>
+    return <button className={`${styles.button}`} disabled>
       <div className={styles.loading}></div>
     </button>
   } else {
