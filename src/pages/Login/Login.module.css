@@ -1,4 +1,4 @@
-.signUp{
+.login{
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -19,7 +19,7 @@ form{
   gap: 1rem;
 }
 
-.linkToSignIn{
+.linkToSignUp{
   font-size: 1rem;
   color: #7c7c8a;
   margin: auto;

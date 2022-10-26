@@ -65,7 +65,7 @@ export default function SignUp(){
 
   return(
     <div className={styles.signUp}>
-      <Title title="CoffeeZone" subtitle="Cadastre-se o quanto antes  " />
+      <Title title="CoffeeZone" subtitle="Cadastre-se o quanto antes" />
       <div className={styles.form}>
         <form onSubmit={signUp}>
           <div className={styles.wrapperInputs}>

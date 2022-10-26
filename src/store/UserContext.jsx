@@ -15,8 +15,6 @@ export const UserStorage = ({children}) => {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
 
-  console.log(loading)
-
   return(
     <UserContext.Provider value={{apiUrl, data, login, loading, setLoading, error}}>
       {children}
