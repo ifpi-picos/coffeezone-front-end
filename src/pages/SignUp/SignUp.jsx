@@ -8,29 +8,25 @@ import Select from "../../components/form/Select/Select";
 import { UserContext } from "../../store/UserContext";
 
 import useForm from "../../utils/useForm";
-import Modal from "../../components/elements/Modal/Modal";
+// import Modal from "../../components/elements/Modal/Modal";
 
 export default function SignUp(){
 
-  const {apiUrl, data, login, loading, setLoading, error} = React.useContext(UserContext);
+  const {apiUrl, data, login, loading, setLoading, error, setError, navigate} = React.useContext(UserContext);
 
   const name = useForm('name');
   const email = useForm('email');
   const password = useForm('password');
   const confirmPassword = useForm('password');
   const [typeUser, setTypeUser] = React.useState('Visitor');
-  const [modal, setModal] = React.useState(null);
 
-  React.useEffect(()=>{
-    if(modal){
-      setTimeout(()=>{
-        setModal(null);
-      }, 3000)
-    }
-  }, [modal])
+  React.useEffect(()=> {
+    setError(null);
+  }, [])
 
   async function signUp(e){
     e.preventDefault();
+    setError(null);
     const validateName = name.validate()
     const validateEmail = email.validate()
     const validatePassword = password.validate()
@@ -54,12 +50,10 @@ export default function SignUp(){
       let json = await response.json()
       if(!response.ok) throw new Error(json)
       setLoading(false); 
-      setModal(json);
-      console.log(modal)
+      navigate("/login");
     } catch (error) {
       setLoading(false); 
-      setModal(error.message);
-      console.log(modal)
+      setError(error.message);
     }
   }
 
@@ -80,8 +74,8 @@ export default function SignUp(){
             </Select>
           </div>
           <Button>Cadastrar-se</Button>
+          {error ? <p className="error">{error}</p> : null}
         </form>
-        {modal ? <Modal>{modal}</Modal> : null}
       </div>
       <Link className={styles.linkToSignIn} to="/login">Já possui uma conta?</Link>
     </div>

@@ -19,3 +19,8 @@
   padding: 3rem 1.25rem;
   display: flex;
 }
+
+.error{
+  font-size: .75rem;
+  color: red;
+}

@@ -9,29 +9,38 @@ import useForm from "../../utils/useForm";
 
 export default function Login(){
 
-  const {apiUrl, data, login, loading, setLoading, error} = React.useContext(UserContext);
+  const {apiUrl, data, login, loading, setLoading, error, navigate} = React.useContext(UserContext);
 
   const email = useForm('email');
   const password = useForm('password');
+  const [errorLogin, setErrorLogin] = React.useState(null);
 
   async function loginAction(e){
     e.preventDefault();
     const validateEmail = email.validate()
     const validatePassword = password.validate()
+    setErrorLogin(null);
     try {
       if(!validateEmail || !validatePassword) throw new Error();
       setLoading(true);
-      let response = await fetch(`${apiUrl}/user`, {
+      let response = await fetch(`${apiUrl}/auth`, {
         method: "POST",
         headers: {
+          Accept: 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({})
+        credentials: 'include',
+        body: JSON.stringify({
+          email: email.value, 
+          password: password.value
+        })
       })
       let json = await response.json()
       if(!response.ok) throw new Error(json)
       setLoading(false); 
+      navigate("/dashboard");
     } catch (error) {
+      setErrorLogin(error.message);
       setLoading(false); 
     }
   }
@@ -46,6 +55,7 @@ export default function Login(){
             <Input label="Senha:" type="password" id="password" placeholder="********" {...password} />
           </div>
           <Button>Entrar</Button>
+          {errorLogin ? <p className="error">{errorLogin}</p> : null}
         </form>
       </div>
       <Link className={styles.linkToSignUp} to="/cadastro">Não possui uma conta? Crie agora!</Link>
