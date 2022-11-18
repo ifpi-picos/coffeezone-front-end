@@ -29,6 +29,10 @@
   font-weight: bold;
 }
 
+.disabled::placeholder{
+  color: #e1e1e6;
+}
+
 .error{
   font-size: .75rem;
   color: red;

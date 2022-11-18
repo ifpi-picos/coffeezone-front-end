@@ -5,14 +5,31 @@ export const UserContext = React.createContext();
 
 export const UserStorage = ({children}) => {
 
-  const apiUrl = 'https://coffeezone-waa1.onrender.com';
-  // const apiUrl = 'http://localhost:3001';
+  const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
 
-  const [data, setData] = React.useState(null);
+  const [data, setData] = React.useState();
   const [login, setLogin] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
+
+  React.useEffect(() => {
+    if(data){
+      switch(data.role){
+        case 'Visitor':
+          setData({...data, role: 'Visitante'});
+        break;
+        case 'Coordinator':
+          setData({...data, role: 'Coordenador'});
+        break;
+        case 'Member':
+          setData({...data, role: 'Membro'});
+        break;
+        default:
+          break;
+      }
+    }
+  }, [data])
   
   return(
     <UserContext.Provider value={{apiUrl, data, setData, login, setLogin, loading, setLoading, error, setError, navigate}}>

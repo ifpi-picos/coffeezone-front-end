@@ -1,14 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./SignUp.module.css";
-import Title from "../../components/elements/Title/Title";
-import Input from "../../components/form/Input/Input";
-import Button from "../../components/form/Button/Button";
-import Select from "../../components/form/Select/Select";
-import { UserContext } from "../../store/UserContext";
-
-import useForm from "../../utils/useForm";
-// import Modal from "../../components/elements/Modal/Modal";
+import Title from "../../molecules/Title/Title";
+import Input from "../../molecules/Input/Input";
+import Select from "../../molecules/Select/Select";
+import Button from "../../atoms/Button/Button";
+import { UserContext } from "../../../store/UserContext";
+import useForm from "../../../utils/useForm";
 
 export default function SignUp(){
 
@@ -49,6 +47,7 @@ export default function SignUp(){
       })
       let json = await response.json()
       if(!response.ok) throw new Error(json)
+      console.log(json)
       setLoading(false); 
       navigate("/login");
     } catch (error) {
@@ -63,7 +62,7 @@ export default function SignUp(){
       <div className={styles.form}>
         <form onSubmit={signUp}>
           <div className={styles.wrapperInputs}>
-            <Input label="Nome:" type="text" id="nome" placeholder="Ex: Ítalo Paixão" {...name} />
+            <Input label="Nome:" type="text" id="name" placeholder="Ex: Ítalo Paixão" {...name} />
             <Input label="Email:" type="email" id="email" placeholder="Ex: email@gmail.com" {...email} />
             <Input label="Senha:" type="password" id="password" placeholder="********" {...password} />
             <Input label="Confirmar senha:" type="password" id="confirmPassword" placeholder="********" {...confirmPassword}  />
@@ -73,7 +72,14 @@ export default function SignUp(){
               <option className={styles.option} value="Coordinator" key="Coordinator">Coordenador</option>
             </Select>
           </div>
-          <Button>Cadastrar-se</Button>
+          {loading ? (
+              <Button disabled loading={true}>
+                <div className="loading"></div>
+              </Button>
+            ) : (
+              <Button>Entrar</Button>
+            )
+          }
           {error ? <p className="error">{error}</p> : null}
         </form>
       </div>

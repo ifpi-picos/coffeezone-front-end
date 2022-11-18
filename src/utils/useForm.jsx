@@ -12,6 +12,10 @@ const types = {
   password: {
     regex: /^.{8,}$/,
     message: "A senha deve conter pelo menos 8 caracteres.",
+  },
+  cardId: {
+    regex: /^.{10}$/,
+    message: "O id do cartão deve conter 10 caracteres.",
   }
 };
 
