@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "./Profile.module.css";
-import { UserContext } from "../../../store/UserContext";
-import Title from '../../molecules/Title/Title';
-import Input from '../../molecules/Input/Input';
-import Button from '../../atoms/Button/Button';
-import useForm from '../../../utils/useForm';
-import Header from '../../organisms/header/Header';
-import Modal from '../../organisms/Modal/Modal';
+import { UserContext } from "../../store/UseContext";
+import Titles from '../molecules/ContainerTitle';
+import TemplateInput from '../molecules/TemplateInput';
+import Button from '../atoms/Button';
+import useForm from '../../utils/useForm';
+import Header from '../organisms/header/Header';
+import TemplateModal from '../molecules/TemplateModal';
+import Error from '../atoms/Error';
 
-export default function Login(){
+export default function Profile(){
   
   const [errorProfile, setErrorProfile] = React.useState(null);
   const [modal, setModal] = React.useState(false);
@@ -52,22 +52,21 @@ export default function Login(){
   }
 
   return(
-   <div className={styles.profile}>
+   <div className='flex flex-1 flex-col gap-8 m-auto max-w-[450px]'>
       <Header />
-      <Title title="Perfil" />
-      <div className={styles.form}>
-        <form onSubmit={alterProfile}>
-          <div className={styles.wrapperInputs}>
-            <Input label="Tipo de usuário:" type="text" id="typeUserPageProfile" placeholder={data.role} disabled />
+      <Titles title="Perfil" />
+      <div>
+        <form onSubmit={alterProfile} className='flex flex-col gap-6'>
+          <div className='flex flex-col gap-4'>
+            <TemplateInput label="Tipo de usuário:" type="text" id="typeUserPageProfile" placeholder={data.role} disabled />
             {data.role === 'Membro' || data.role === 'Coordenador' ? (
-                <Input label="Id do cartão:" type="text" id="cardIdPageProfile" placeholder={data.card} disabled />
+                <TemplateInput label="Id do cartão:" type="text" id="cardIdPageProfile" placeholder={data.card} disabled />
               ) : null
             }
-            <Input label="Nome:" type="text" id="namePageProfile" placeholder={data.name} {...name} />
-            <Input label="Senha atual:" type="password" id="passwordPageProfile" placeholder="********" {...currentPassword} />
-            <Input label="Nova senha:" type="password" id="newPasswordPageProfile" placeholder="********" {...newPassword} />
+            <TemplateInput label="Nome:" type="text" id="namePageProfile" placeholder={data.name} {...name} />
+            <TemplateInput label="Senha atual:" type="password" id="passwordPageProfile" placeholder="********" {...currentPassword} />
+            <TemplateInput label="Nova senha:" type="password" id="newPasswordPageProfile" placeholder="********" {...newPassword} />
           </div>
-          {/* <Button>Alterar perfil</Button> */}
           {loadingAlterProfile ? (
               <Button disabled>
                 <div className="loading"></div>
@@ -76,16 +75,14 @@ export default function Login(){
               <Button>Alterar perfil</Button>
             )
           }
-          {errorProfile ? <p className="error">{errorProfile}</p> : null}
+          {errorProfile ? <Error>{errorProfile}</Error> : null}
         </form>
       </div>
       <Button color="#920000" onClick={() => {setModal(true)}}>Deletar perfil</Button>
       {modal ? (
-          <Modal modal={modal} setModal={setModal}>
+          <TemplateModal modal={modal} setModal={setModal}>
             <p>Tem certeza que deseja deletar seu perfil?</p>
-            <div className={styles.wrapperButtons}>
-              {/* <Button onClick={() => {setModal(false)}}>Cancelar</Button> */}
-              {/* <Button color="#920000" onClick={deleteProfile}>Deletar perfil</Button> */}
+            <div className='flex gap-8 m-auto'>
               {loadingDelete ? (
                   <>
                     <Button onClick={() => {setModal(false)}} loading={true}>Cancelar</Button>
@@ -101,7 +98,7 @@ export default function Login(){
                 )
               }
             </div>
-          </Modal>
+          </TemplateModal>
         ) : null}
    </div>
   )

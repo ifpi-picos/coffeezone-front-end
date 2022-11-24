@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./Login.module.css";
-import Title from "../../molecules/Title/Title";
-import Input from "../../molecules/Input/Input";
-import Button from "../../atoms/Button/Button";
-import { UserContext } from "../../../store/UserContext";
-import useForm from "../../../utils/useForm";
+import LinkComponent from "../atoms/Link";
+import ContainerTitle from "../molecules/ContainerTitle";
+import TemplateInput from "../molecules/TemplateInput";
+import Button from "../atoms/Button";
+import { UserContext } from "../../store/UseContext";
+import useForm from "../../utils/useForm";
+import Error from '../atoms/Error';
 
 export default function Login(){
 
@@ -71,15 +71,14 @@ export default function Login(){
   // }, []);
 
   return(
-    <div className={styles.login}>
-      <Title title="CoffeeZone"/>
-      <div className={styles.form}>
-        <form onSubmit={loginAction}>
-          <div className={styles.wrapperInputs}>
-            <Input label="Email:" type="email" id="email" placeholder="Ex: email@gmail.com" {...email} />
-            <Input label="Senha:" type="password" id="password" placeholder="********" {...password} />
+    <div className='flex flex-1 flex-col gap-8 m-auto max-w-[450px]'>
+      <ContainerTitle title="CoffeeZone"/>
+      <div>
+        <form onSubmit={loginAction} className='flex flex-col gap-6'>
+          <div className='flex flex-col gap-4'>
+            <TemplateInput label="Email:" type="email" id="email" placeholder="Ex: email@gmail.com" {...email} />
+            <TemplateInput label="Senha:" type="password" id="password" placeholder="********" {...password} />
           </div>
-          {/* <Button>Entrar</Button> */}
           {loading ? (
               <Button disabled>
                 <div className="loading"></div>
@@ -88,10 +87,10 @@ export default function Login(){
               <Button>Entrar</Button>
             )
           }
-          {errorLogin ? <p className="error">{errorLogin}</p> : null}
+          {errorLogin ? <Error>{errorLogin}</Error> : null}
         </form>
       </div>
-      <Link className={styles.linkToSignUp} to="/cadastro">Não possui uma conta? Crie agora!</Link>
+      <LinkComponent path="/cadastro">Não possui uma conta? Crie agora!</LinkComponent>
     </div>
   )
 }

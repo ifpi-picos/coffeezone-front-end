@@ -7,23 +7,23 @@
   font-family: 'Inter', sans-serif;
 }
 
-#root{
+/* #root{
   min-height: 100vh;
   height: 100%;
-}
+} */
 
-.app{
+/* .app{
   min-height: 100vh;
   height: 100%;
   background-color: #121214;
   padding: 3rem 1.25rem;
   display: flex;
-}
+} */
 
-.error{
+/* .error{
   font-size: .75rem;
   color: red;
-}
+} */
 
 .loading{
   height: 1rem;

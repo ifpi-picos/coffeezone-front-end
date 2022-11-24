@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./SignUp.module.css";
-import Title from "../../molecules/Title/Title";
-import Input from "../../molecules/Input/Input";
-import Select from "../../molecules/Select/Select";
-import Button from "../../atoms/Button/Button";
-import { UserContext } from "../../../store/UserContext";
-import useForm from "../../../utils/useForm";
+import LinkComponent from "../atoms/Link";
+import ContainerTitle from "../molecules/ContainerTitle";
+import TemplateInput from "../molecules/TemplateInput";
+import Button from "../atoms/Button";
+import { UserContext } from "../../store/UseContext";
+import useForm from "../../utils/useForm";
+import Error from '../atoms/Error';
 
 export default function SignUp(){
 
@@ -16,7 +15,6 @@ export default function SignUp(){
   const email = useForm('email');
   const password = useForm('password');
   const confirmPassword = useForm('password');
-  const [typeUser, setTypeUser] = React.useState('Visitor');
 
   React.useEffect(()=> {
     setError(null);
@@ -42,7 +40,6 @@ export default function SignUp(){
           name: name.value,
           email: email.value,
           password: password.value,
-          role: typeUser
         })
       })
       let json = await response.json()
@@ -57,20 +54,15 @@ export default function SignUp(){
   }
 
   return(
-    <div className={styles.signUp}>
-      <Title title="CoffeeZone" subtitle="Cadastre-se o quanto antes" />
-      <div className={styles.form}>
-        <form onSubmit={signUp}>
-          <div className={styles.wrapperInputs}>
-            <Input label="Nome:" type="text" id="name" placeholder="Ex: Ítalo Paixão" {...name} />
-            <Input label="Email:" type="email" id="email" placeholder="Ex: email@gmail.com" {...email} />
-            <Input label="Senha:" type="password" id="password" placeholder="********" {...password} />
-            <Input label="Confirmar senha:" type="password" id="confirmPassword" placeholder="********" {...confirmPassword}  />
-            <Select id="selectTypeUser" label="Tipo de usuário" name="tipo de usuário" value={typeUser} onChange={setTypeUser}>
-              <option className={styles.option} value="Visitor" key="Visitor">Visitante</option>
-              <option className={styles.option} value="Member" key="Member">Membro</option>
-              <option className={styles.option} value="Coordinator" key="Coordinator">Coordenador</option>
-            </Select>
+    <div className='flex flex-1 flex-col gap-8 m-auto max-w-[450px]'>
+      <ContainerTitle title="CoffeeZone" subtitle="Cadastre-se o quanto antes" />
+      <div>
+        <form onSubmit={signUp} className='flex flex-col gap-6'>
+          <div className='flex flex-col gap-4'>
+            <TemplateInput label="Nome:" type="text" id="name" placeholder="Ex: Ítalo Paixão" {...name} />
+            <TemplateInput label="Email:" type="email" id="email" placeholder="Ex: email@gmail.com" {...email} />
+            <TemplateInput label="Senha:" type="password" id="password" placeholder="********" {...password} />
+            <TemplateInput label="Confirmar senha:" type="password" id="confirmPassword" placeholder="********" {...confirmPassword}  />
           </div>
           {loading ? (
               <Button disabled loading={true}>
@@ -80,10 +72,11 @@ export default function SignUp(){
               <Button>Entrar</Button>
             )
           }
-          {error ? <p className="error">{error}</p> : null}
+          {error ? <Error>{error}</Error> : null}
         </form>
       </div>
-      <Link className={styles.linkToSignIn} to="/login">Já possui uma conta?</Link>
+      {/* <Link className={styles.linkToSignIn} to="/login">Já possui uma conta?</Link> */}
+      <LinkComponent path="/login">Já possui uma conta?</LinkComponent>
     </div>
   )
 }

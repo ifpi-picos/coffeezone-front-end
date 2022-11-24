@@ -1,11 +1,11 @@
 import React from "react";
-import { UserContext } from "../../../store/UserContext";
+import { UserContext } from "../../../store/UseContext";
 import styles from "./Header.module.css";
 import {ReactComponent as Profile} from '../../../assets/User.svg';
 import {ReactComponent as Signout} from '../../../assets/SignOut.svg';
-import {ReactComponent as X} from '../../../assets/X.svg';
-import {ReactComponent as Menu} from '../../../assets/Menu.svg';
-import { Link } from 'react-router-dom';
+import {ReactComponent as CloseMenu} from '../../../assets/X.svg';
+import {ReactComponent as OpenMenu} from '../../../assets/Menu.svg';
+import LinkComponent from '../../atoms/Link';
 
 export default function Header(){
 
@@ -28,16 +28,16 @@ export default function Header(){
   return(
     <>
       {menuOpen ? (
-          <X className={`${styles.icon} ${styles.iconMenu}`} onClick={() => {setMenuOpen(!menuOpen)}} />
+          <CloseMenu className={`${styles.icon} ${styles.iconMenu}`} onClick={() => {setMenuOpen(!menuOpen)}} />
         ) : (
-          <Menu className={`${styles.icon} ${styles.iconMenu}`} onClick={() => {setMenuOpen(!menuOpen)}} />
+          <OpenMenu className={`${styles.icon} ${styles.iconMenu}`} onClick={() => {setMenuOpen(!menuOpen)}} />
         )
       }
-      <header className={`${styles.header} ${!menuOpen && windowWidth < 640  ? styles.hiddenMenu : null}`}>
+      <header className={`absolute top-0 right-0 left-0 bg-neutral transition-200 ${!menuOpen && windowWidth < 640  ? styles.hiddenMenu : null}`}>
         <div className={styles.wrapper}>
           <div className={styles.wrapperLink}>
             <Profile className={styles.icon} />
-            <Link to="/perfil">Perfil</Link>
+            <LinkComponent to="/perfil">Perfil</LinkComponent>
           </div>
           <div className={styles.wrapperLink}>
             <Signout className={styles.icon} />

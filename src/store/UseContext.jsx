@@ -8,7 +8,11 @@ export const UserStorage = ({children}) => {
   const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
 
-  const [data, setData] = React.useState();
+  const [data, setData] = React.useState({
+    name: "euueueeueu",
+    role: "Member",
+    card: "000000000"
+  });
   const [login, setLogin] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
